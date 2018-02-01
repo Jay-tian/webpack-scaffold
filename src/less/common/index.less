@@ -1,0 +1,138 @@
+@import './media-768.less';
+@import './media-992.less';
+@import './media-1200.less';
+@import './color.less';
+html,
+body{
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    padding: 0;
+    margin: 0;
+    min-height: 100%;
+    color: #555;
+    background-color: #f8f8f8;
+    font-size: 16px;
+}
+a {
+    background-color: transparent
+}
+a:active,a:hover {
+    outline: 0
+}
+*,:after,:before {
+    box-sizing: border-box
+}
+.h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit
+}
+.h1,h1 {
+    font-size: 24px
+}
+
+.h2,h2 {
+    font-size: 22px
+}
+
+.h3,h3 {
+    font-size: 18px
+}
+
+.h4,h4 {
+    font-size: 16px
+}
+
+.h5,h5 {
+    font-size: 14px
+}
+
+.h6,h6 {
+    font-size: 12px
+}
+.text-left {
+    text-align: left
+}
+
+.text-right {
+    text-align: right
+}
+
+.text-center {
+    text-align: center
+}
+ol,ul {
+    margin-top: 0;
+    margin-bottom: 10px
+}
+
+ol ol,ol ul,ul ol,ul ul {
+    margin-bottom: 0
+}
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 10px;
+    padding-right: 10px
+}
+
+.clearfix{
+   &:after{
+        clear: both;
+        box-sizing: border-box;
+        content: " ";
+        display: table;
+   } 
+}
+
+.pull-left{
+    float: left;
+}
+
+.pull-right{
+    float: right;
+}
+
+ul,ol,div,dl,dt,dd{
+    padding: 0;
+    margin: 0;
+}
+
+a{
+    color: #606060;
+    text-decoration: unset;
+    .transition;
+    &:hover{
+        color: #4385f4;   
+    }  
+}
+
+.main{
+    margin-top: 25px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.05);
+}
+
+img{
+    vertical-align: middle;
+}
+
+.transition{
+  -webkit-transition: all .3s ease;
+     -moz-transition: all .3s ease;
+       -o-transition: all .3s ease;
+          transition: all .3s ease;
+}
+.text-overflow {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+input{
+    outline: none;
+}

@@ -1,0 +1,75 @@
+.article-main{
+    position: relative;
+    &.main{
+        padding: 0 30px;
+    }
+    .content{
+        line-height: 30px;
+        padding: 20px 0;
+    }
+    .title{
+        padding-bottom: 10px;
+        padding-right: 40px;
+        position: relative;
+        &:after{
+            position: absolute;
+            content: '';
+            left: -30px;
+            right: -30px;
+            bottom: 0;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        h1{
+            margin: 0;
+            padding: 20px 0;
+            color: #333;
+            font-size: 24px;
+        }
+    }
+    ol{
+        list-style: none;
+    }
+    .author-list{
+        opacity: 0;
+        z-index: 0;
+        left: -250px;
+        position: absolute;
+        top: 0;
+        background: #fff;
+        z-index: 9;
+        background: #fafaec;
+        width: 250px;
+        padding: 12px;
+        border-radius: 10px;
+        &:after{
+            content: '';
+            position: absolute;
+            width: 0;
+            top: 40px;
+            right: -10px;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 14px solid #fafaec;
+        }
+        dl{
+            line-height: 20px;
+            width: 33.33333%;
+            float: left;
+        }
+    }
+    .author{
+        top: 0;
+        right: 0;
+        padding: 22px 10px;
+        position: absolute;
+        cursor: pointer;
+        &:hover{
+           .author-list{
+                opacity: 1;  
+                left: -260px;
+                z-index: 99;
+           } 
+        }
+    }
+}
