@@ -45,6 +45,13 @@ let loader = [
             }  
         ]  
     }, 
+    {  
+        test:/\.(png)|(jpg)|(gif)$/i,  
+        loader: "file-loader",
+        query: {
+            name: 'image/[hash:10].[ext]',
+        }
+    }, 
 ];
 
 export default loader;
