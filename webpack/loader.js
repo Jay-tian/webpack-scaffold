@@ -1,19 +1,35 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+import setting from './setting.js';
 let loader = [
     {
-        test: /\.less$/,
-        loader: ExtractTextPlugin.extract(
-            'css-loader!' +
-            'less-loader' 
-        )
+        test: /\.css$/,
+        loaders: [
+        "style-loader", 
+        "css-loader?importLoaders=1", 
+        {
+            loader: "postcss-loader",
+            options: {
+            plugins: (loader)=>[
+                require('autoprefixer')({
+                    broswers:['last 5 versions']
+                })
+            ]
+            },
+        }
+        ],
     },
     {
-        test: /\.jsx?$/,
-        exclude: /(node_modules|bower_components)/,
+        test: /\.less$/,
+        loader: ExtractTextPlugin.extract({fallback: "style-loader", use: "css-loader!postcss-loader!less-loader"})
+    },
+    {
+        test: /\.js?$/,
+        exclude: /(node_modules)/,
+        include: setting.entry,
         loader: 'babel-loader',
         query: {
             cacheDirectory: true,
-            presets: ['stage-0', 'es2015'],
+            presets: ['latest'],
             plugins: ['transform-runtime']
         }
     },
@@ -23,7 +39,7 @@ let loader = [
             {  
                 loader: "file-loader",  
                 options: {  
-                    name:"[hash:8]",  
+                    name:"[hash:4]",  
                     outputPath:"iconfont/"  
                 }  
             }  

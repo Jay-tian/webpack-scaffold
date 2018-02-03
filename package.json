@@ -1,10 +1,13 @@
 {
   "dependencies": {
     "antd": "^2.13.1",
+    "autoprefixer": "^7.2.5",
+    "babel-preset-latest": "^6.24.1",
     "express": "^4.15.4",
     "file-loader": "^1.1.6",
     "jquery-validation": "^1.17.0",
     "particles.js": "^2.0.0",
+    "postcss-loader": "^2.1.0",
     "url-loader": "^0.6.2"
   },
   "devDependencies": {

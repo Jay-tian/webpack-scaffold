@@ -1,31 +1,32 @@
-import baseConfig from './base.js';
-let plugins =  baseConfig.plugins;
+import entries from './entries.js';
+import loader from './loader.js';
+import plugin from './plugin.js';
+import setting from './setting.js';
 
+
+const path = require('path')
 const argv = require('yargs').argv;
 const webpack = require('webpack');
-
-if ('prod' === argv.env) {
-    plugins.push(new webpack.optimize.UglifyJsPlugin({
-        compress: {
-        warnings: false
-        }
-    }));
-}
+const root = path.resolve(__dirname, '..');
 
 let webpackConfig = {
-    entry: baseConfig.entries,
-    output: baseConfig.output,
-    module: {
-        loaders: baseConfig.loaders
+    entry: entries,
+    output: {
+        path: setting.output, 
+        filename: "[name].js",
+        publicPath: setting.publicPath,
     },
-    plugins: plugins
+    module: {
+        loaders: loader,
+    },
+    plugins: plugin,
+    externals: { 'jquery': 'window.jQuery' },
 }
 
 if ('dev' ===  argv.env) {
-    console.log(__dirname);
     webpackConfig.devtool = 'eval-source-map';
     webpackConfig.devServer = {
-        contentBase: __dirname + "/../dist",
+        contentBase: __dirname + "/../",
         port: 3032,
         inline: false,
         historyApiFallback: false,
