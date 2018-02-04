@@ -18,8 +18,6 @@ let webpackConfig = {
     },
     module: {
         loaders: loader,
-        rules: [
-        ],
     },
     plugins: plugin,
 }

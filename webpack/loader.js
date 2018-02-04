@@ -19,10 +19,6 @@ let loader = [
         ],
     },
     {
-        test: require.resolve('jquery'),
-        loader: 'expose?$!expose?jQuery',
-    },
-    {
         test: /\.less$/,
         loader: ExtractTextPlugin.extract({fallback: "style-loader", use: "css-loader!postcss-loader!less-loader"})
     },
