@@ -18,9 +18,10 @@ let webpackConfig = {
     },
     module: {
         loaders: loader,
+        rules: [
+        ],
     },
     plugins: plugin,
-    externals: { 'jquery': 'window.jQuery' },
 }
 
 if ('dev' ===  argv.env) {

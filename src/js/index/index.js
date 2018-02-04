@@ -1,1 +1,1 @@
-import './../../less/page/index.less'
+require("./../../less/page/index.less");

@@ -1,4 +1,2 @@
-import './../less/layout.less';
-const $ = require("jQuery");
-console.log($);
-// import './libs/validation.js'
+require("./../less/app.less");
+// require('bootstrap/dist/js/bootstrap.js');

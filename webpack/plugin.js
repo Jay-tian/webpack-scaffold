@@ -10,11 +10,13 @@ let plugin = [
     new ExtractTextPlugin('[name].css', {
         allChunks: true
     },
-    new webpack.optimize.CommonsChunkPlugin('common.js'),
+    new webpack.optimize.CommonsChunkPlugin('common'),
     new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-    })
+        $: 'jquery', 
+        jQuery: 'jquery', 
+        'window.jQuery': 'jquery',
+        'window.$': 'jquery',
+    }),
 )]
 
 if ('prod' === argv.env) {
