@@ -52,14 +52,15 @@ let loader = [
 			name: 'image/[hash:10].[ext]',
 		}
 	}, 
-	// {
-	// 	test:/\.(js|html)$/,
-	// 	exclude:['/bootstrap/', '/node_modules/'],
-	// 	loader: 'eslint-loader',
-	// 	options: {
-	// 		fix: true,
-	// 	}
-	// },
+	{
+		enforce: 'pre',
+		test:/\.(js|html)$/,
+		exclude:['/bootstrap/', '/node_modules/'],
+		loader: 'eslint-loader',
+		options: {
+			fix: true,
+		}
+	},
 ];
 
 export default loader;
