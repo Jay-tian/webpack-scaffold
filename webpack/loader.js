@@ -37,7 +37,7 @@ let loader = [
 		test:/\.(woff)|(svg)|(eot)|(ttf)/,  
 		use: [  
 			{  
-				loader: 'file-loader',  
+				loader: 'file-loader',
 				options: {  
 					name:'[hash:4]',  
 					outputPath:'iconfont/'  
@@ -52,6 +52,14 @@ let loader = [
 			name: 'image/[hash:10].[ext]',
 		}
 	}, 
+	// {
+	// 	test:/\.(js|html)$/,
+	// 	exclude:['/bootstrap/', '/node_modules/'],
+	// 	loader: 'eslint-loader',
+	// 	options: {
+	// 		fix: true,
+	// 	}
+	// },
 ];
 
 export default loader;

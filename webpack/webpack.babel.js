@@ -15,17 +15,6 @@ let webpackConfig = {
 	},
 	module: {
 		loaders: loader,
-		rules: [
-			{
-				enforce: 'pre',
-				test:/\.(js|html)$/,
-				exclude:['/bootstrap/', '/node_modules/'],
-				loader: 'eslint-loader',
-				options: {
-					fix: true,
-				}
-			},
-		],
 	},
 	plugins: plugin,
 };

@@ -20,12 +20,20 @@
 配置： 入口目录和输出口目录
 
 ### 代码格式化配置
+
+ 你可以自己配置代码风格
 ```
   ./node_modules/.bin/eslint --init
 ```
 
+修复代码格式
+```
+./node_modules/.bin/eslint --fix filepath
+```
+
 ## 开发说明
 每个目录下的index.js命名的文件将会作为输出文件
+不是index.js命名的会作为通用模块使用
 
 ## 命令
 本地开发环境执行以下命令：
