@@ -3,15 +3,17 @@
     "antd": "^2.13.1",
     "autoprefixer": "^7.2.5",
     "babel-preset-latest": "^6.24.1",
-    "eslint-loader": "^1.9.0",
+    "eslint-loader": "^2.0.0",
     "expose-loader": "^0.7.4",
     "express": "^4.15.4",
     "file-loader": "^1.1.6",
     "jquery-validation": "^1.17.0",
+    "mime": "^2.2.0",
     "particles.js": "^2.0.0",
     "popper": "^1.0.1",
     "postcss-loader": "^2.1.0",
-    "url-loader": "^0.6.2"
+    "url-loader": "^0.6.2",
+    "webpack-cli": "^2.0.10"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -22,22 +24,23 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "bootstrap": "^4.0.0",
-    "css-loader": "^0.28.7",
+    "css-loader": "^0.28.10",
     "editor.md": "^1.5.0",
-    "eslint": "^4.18.1",
+    "eslint": "^4.18.2",
     "eslint-plugin-react": "^7.7.0",
-    "extract-text-webpack-plugin": "^3.0.0",
+    "extract-text-webpack-plugin": "^3.0.2",
     "glob": "^7.1.2",
     "jquery": "^3.3.1",
     "less": "^2.7.2",
-    "less-loader": "^4.0.5",
-    "style-loader": "^0.20.1",
-    "webpack": "^3.5.6",
-    "webpack-dev-server": "^2.11.1"
+    "less-loader": "^4.0.6",
+    "style-loader": "^0.20.2",
+    "webpack": "^4.1.0",
+    "webpack-dev-server": "^3.1.0"
   },
   "scripts": {
-    "build": "webpack -p --config './webpack/webpack.babel.js' --env prod",
-    "dev": "webpack-dev-server --color --config './webpack/webpack.babel.js' --env dev"
+    "build": "webpack -p --config './webpack/webpack.babel.js' --mode production",
+    "start": "webpack --watch --config './webpack/webpack.babel.js' --mode production",
+    "fix": "./node_modules/.bin/eslint --fix"
   },
   "name": "tianshengjie",
   "description": "blog ====",

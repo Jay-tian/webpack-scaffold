@@ -14,7 +14,7 @@ let webpackConfig = {
 		publicPath: setting.publicPath,
 	},
 	module: {
-		loaders: loader,
+		rules: loader,
 	},
 	plugins: plugin,
 };

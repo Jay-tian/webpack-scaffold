@@ -1,5 +1,11 @@
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 import setting from './setting.js';
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+
+const extractLess = new ExtractTextPlugin({
+    filename: "[name].[contenthash].css",
+    disable: process.env.NODE_ENV === "development"
+});
+
 let loader = [
 	{
 		test: /\.css$/,
@@ -9,7 +15,7 @@ let loader = [
 			{
 				loader: 'postcss-loader',
 				options: {
-					plugins: (loader)=>[
+					plugins: ()=>[
 						require('autoprefixer')({
 							broswers:['last 5 versions']
 						})
@@ -20,7 +26,25 @@ let loader = [
 	},
 	{
 		test: /\.less$/,
-		loader: ExtractTextPlugin.extract({fallback: 'style-loader', use: 'css-loader!postcss-loader!less-loader'})
+		use: extractLess.extract({
+			use: [{
+				loader: "css-loader"
+			}, {
+				loader: "less-loader"
+			}],
+			// use style-loader in development
+			fallback: "style-loader"
+		})
+	},
+	{
+		test: /\.less$/,
+		use: [{
+			loader: 'style-loader' // creates style nodes from JS strings
+		}, {
+			loader: 'css-loader' // translates CSS into CommonJS
+		}, {
+			loader: 'less-loader' // compiles Less to CSS
+		}]
 	},
 	{
 		test: /\.js?$/,
