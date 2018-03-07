@@ -1,11 +1,10 @@
 
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const argv = require('yargs').argv;
-import setting from './setting.js';
+import config from './env.js';
 
 let plugin = [
-  new webpack.BannerPlugin(setting.author),
+  new webpack.BannerPlugin(config.setting.author),
   new webpack.HotModuleReplacementPlugin(),
   new ExtractTextPlugin('[name].css', {
     allChunks: true
@@ -20,7 +19,7 @@ let plugin = [
   }),
 ];
 
-if ('prod' === argv.env) {
+if ('production' === config.env) {
   plugin.push(new webpack.optimize.UglifyJsPlugin({
     compress: {
       warnings: false

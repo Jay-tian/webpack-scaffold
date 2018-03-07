@@ -3,6 +3,7 @@
     "antd": "^2.13.1",
     "autoprefixer": "^7.2.5",
     "babel-preset-latest": "^6.24.1",
+    "cross-env": "^5.1.3",
     "eslint-loader": "^1.9.0",
     "expose-loader": "^0.7.4",
     "express": "^4.15.4",
@@ -38,8 +39,8 @@
     "webpack-dev-server": "^2.11.1"
   },
   "scripts": {
-    "build": "webpack -p --config './webpack/webpack.babel.js' --env prod",
-    "dev": "webpack-dev-server --color --config './webpack/webpack.babel.js' --env dev",
+    "build": "cross-env setting_path='/webpack/setting.js' NODE_ENV=development webpack -p --config './webpack/webpack.babel.js'",
+    "dev": "cross-env setting_path='/webpack/setting.js' NODE_ENV=production webpack-dev-server --color --config './webpack/webpack.babel.js'",
     "fix": "./node_modules/.bin/eslint --fix"
   },
   "name": "tianshengjie",

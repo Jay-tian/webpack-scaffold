@@ -1,16 +1,15 @@
 import entries from './entries.js';
 import loader from './loader.js';
 import plugin from './plugin.js';
-import setting from './setting.js';
-const process = require('process');
-const argv = require('yargs').argv;
+import process from 'process';
+import config from './env.js';
 
 let webpackConfig = {
   entry: entries,
   output: {
-    path: setting.output, 
+    path: config.setting.output, 
     filename: '[name].js',
-    publicPath: setting.publicPath,
+    publicPath: config.setting.publicPath,
   },
   module: {
     loaders: loader,
@@ -18,7 +17,7 @@ let webpackConfig = {
   plugins: plugin,
 };
 
-if ('dev' ===  argv.env) {
+if ('development' ===  config.env) {
   webpackConfig.devtool = 'eval-source-map';
   webpackConfig.devServer = {
     contentBase: process.cwd(),

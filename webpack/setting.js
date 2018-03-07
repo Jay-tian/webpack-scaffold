@@ -8,4 +8,4 @@ let setting = {
   author: 'tsj',
 };
 
-export default setting;
+module.exports = setting;
