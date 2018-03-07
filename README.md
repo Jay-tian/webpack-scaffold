@@ -1,12 +1,9 @@
 # webpack-scaffold
 
-## 启动php服务
-```
-   php -S localhost:3031 -t ./
-```
-浏览器内打开该地址： localhost:3031
-
-或者直接打开 根目录的index.html
+## start
+1. 打开根目录的 index.html, 默认为开发模式
+2. 下载依赖 
+3. 启动本地开发环境
 
 ## 下载依赖
 ```

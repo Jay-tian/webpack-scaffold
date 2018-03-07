@@ -39,7 +39,8 @@
   },
   "scripts": {
     "build": "webpack -p --config './webpack/webpack.babel.js' --env prod",
-    "dev": "webpack-dev-server --color --config './webpack/webpack.babel.js' --env dev"
+    "dev": "webpack-dev-server --color --config './webpack/webpack.babel.js' --env dev",
+    "fix": "./node_modules/.bin/eslint --fix"
   },
   "name": "tianshengjie",
   "description": "blog ====",
