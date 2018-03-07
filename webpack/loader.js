@@ -1,5 +1,6 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 import setting from './setting.js';
+const argv = require('yargs').argv;
 let loader = [
 	{
 		test: /\.css$/,
@@ -9,7 +10,7 @@ let loader = [
 			{
 				loader: 'postcss-loader',
 				options: {
-					plugins: (loader)=>[
+					plugins: ()=>[
 						require('autoprefixer')({
 							broswers:['last 5 versions']
 						})
@@ -51,8 +52,11 @@ let loader = [
 		query: {
 			name: 'image/[hash:10].[ext]',
 		}
-	}, 
-	{
+	},
+];
+
+if ('prod' === argv.env) {
+	loader.push({
 		enforce: 'pre',
 		test:/\.(js|html)$/,
 		exclude:['/bootstrap/', '/node_modules/'],
@@ -60,7 +64,7 @@ let loader = [
 		options: {
 			fix: true,
 		}
-	},
-];
+	});
+}
 
 export default loader;

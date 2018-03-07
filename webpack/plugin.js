@@ -16,6 +16,7 @@ let plugin = [
 		jQuery: 'jquery', 
 		'window.jQuery': 'jquery',
 		'window.$': 'jquery',
+		Popper: ['popper.js', 'default'],
 	}),
 ];
 

@@ -11,6 +11,7 @@
     "mime": "^2.2.0",
     "particles.js": "^2.0.0",
     "popper": "^1.0.1",
+    "popper.js": "^1.12.9",
     "postcss-loader": "^2.1.0",
     "url-loader": "^0.6.2"
   },

@@ -5197,6 +5197,10 @@ pluralize@^7.0.0:
   version "7.0.0"
   resolved "http://registry.npm.taobao.org/pluralize/download/pluralize-7.0.0.tgz#298b89df8b93b0221dbf421ad2b1b1ea23fc6777"
 
+popper.js@^1.12.9:
+  version "1.12.9"
+  resolved "http://registry.npm.taobao.org/popper.js/download/popper.js-1.12.9.tgz#0dfbc2dff96c451bb332edcfcfaaf566d331d5b3"
+
 popper@^1.0.1:
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/popper/download/popper-1.0.1.tgz#a3153910a01ce328a297cb241924afff0690837e"

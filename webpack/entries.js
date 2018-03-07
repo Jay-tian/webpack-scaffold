@@ -1,8 +1,6 @@
 import setting from './setting.js';
 const glob = require('glob');
-const path = require('path');
 
-const root = path.resolve(__dirname, '..');
 const fileRootPath = setting.entry;
 let files = glob.sync(fileRootPath + '**/index.js');
 
