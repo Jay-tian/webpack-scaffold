@@ -14,6 +14,10 @@
     "popper": "^1.0.1",
     "popper.js": "^1.12.9",
     "postcss-loader": "^2.1.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-lazy-load": "^3.0.13",
+    "react-slick": "^0.20.0",
     "url-loader": "^0.6.2"
   },
   "devDependencies": {
