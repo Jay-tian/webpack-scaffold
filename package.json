@@ -43,21 +43,28 @@
     "dev": "cross-env setting_path='/webpack/setting.js' NODE_ENV=production webpack-dev-server --color --config './webpack/webpack.babel.js'",
     "fix": "./node_modules/.bin/eslint --fix"
   },
-  "name": "tianshengjie",
-  "description": "blog ====",
-  "version": "1.0.0",
+  "name": "jay-webpack-scaffold",
+  "description": "webpack",
+  "version": "1.0.1",
   "main": "webpack.config.js",
   "directories": {
     "test": "tests"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Jay-tian/blog-framwork.git"
+    "url": "git+https://github.com/Jay-tian/webpack-scaffold"
   },
   "author": "tianshengjie",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Jay-tian/blog-framwork/issues"
+    "url": "https://github.com/Jay-tian/webpack-scaffold/issues"
   },
-  "homepage": "https://github.com/Jay-tian/blog-framwork#readme"
+  "homepage": "https://github.com/Jay-tian/webpack-scaffold#readme",
+  "keywords": [
+    "webpack",
+    "es6",
+    "less",
+    "eslint",
+    "icon-font"
+  ]
 }
