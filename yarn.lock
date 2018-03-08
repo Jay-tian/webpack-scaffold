@@ -3039,7 +3039,7 @@ faye-websocket@~0.11.0:
   dependencies:
     websocket-driver ">=0.5.1"
 
-fbjs@^0.8.16:
+fbjs@^0.8.0, fbjs@^0.8.16:
   version "0.8.16"
   resolved "http://registry.npm.taobao.org/fbjs/download/fbjs-0.8.16.tgz#5e67432f550dc41b572bf55847b8aca64e5337db"
   dependencies:
@@ -6031,14 +6031,9 @@ rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-dom@^16.2.0:
-  version "16.2.0"
-  resolved "https://registry.npmjs.org/react-dom/-/react-dom-16.2.0.tgz#69003178601c0ca19b709b33a83369fe6124c044"
-  dependencies:
-    fbjs "^0.8.16"
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
-    prop-types "^15.6.0"
+react-dom@15.0.0:
+  version "15.0.0"
+  resolved "https://registry.npmjs.org/react-dom/-/react-dom-15.0.0.tgz#49a91a663d8ff9f699eb4997f0027ead8abe0d44"
 
 react-lazy-load@^3.0.10:
   version "3.0.12"
@@ -6081,14 +6076,13 @@ react-slick@~0.15.0:
     object-assign "^4.1.0"
     slick-carousel "^1.6.0"
 
-react@^16.2.0:
-  version "16.2.0"
-  resolved "https://registry.npmjs.org/react/-/react-16.2.0.tgz#a31bd2dab89bff65d42134fa187f24d054c273ba"
+react@15.0.0:
+  version "15.0.0"
+  resolved "https://registry.npmjs.org/react/-/react-15.0.0.tgz#3c7e16531d630e15c1a50a947f14ba61746af8a7"
   dependencies:
-    fbjs "^0.8.16"
+    fbjs "^0.8.0"
     loose-envify "^1.1.0"
-    object-assign "^4.1.1"
-    prop-types "^15.6.0"
+    object-assign "^4.0.1"
 
 read-only-stream@^2.0.0:
   version "2.0.0"
