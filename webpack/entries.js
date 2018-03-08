@@ -1,7 +1,7 @@
-import setting from './setting.js';
+const config = require('./env.js');
 const glob = require('glob');
 
-const fileRootPath = setting.entry;
+const fileRootPath = config.setting.entry;
 let files = glob.sync(fileRootPath + '**/index.js');
 
 let entries = {};
@@ -11,5 +11,4 @@ files.forEach(function(f){
 });
 entries = Object.assign({}, {'app': fileRootPath + 'app.js'}, entries);
 
-
-export default entries;
+module.exports = entries;

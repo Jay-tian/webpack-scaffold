@@ -1,7 +1,7 @@
 
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-import config from './env.js';
+const config = require('./env.js');
 
 let plugin = [
   new webpack.BannerPlugin(config.setting.author),
@@ -27,4 +27,4 @@ if ('production' === config.env) {
   }));
 }
 
-export default plugin;
+module.exports = plugin;

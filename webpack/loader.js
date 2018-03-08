@@ -1,5 +1,6 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-import setting from './setting.js';
+const config = require('./env.js');
+
 let loader = [
   {
     test: /\.css$/,
@@ -25,7 +26,7 @@ let loader = [
   {
     test: /\.js?$/,
     exclude: /(node_modules)/,
-    include: setting.entry,
+    include: config.setting.entry,
     loader: 'babel-loader',
     query: {
       cacheDirectory: true,
@@ -63,4 +64,4 @@ let loader = [
   },
 ];
 
-export default loader;
+module.exports = loader;

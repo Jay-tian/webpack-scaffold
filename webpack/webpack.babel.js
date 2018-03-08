@@ -1,8 +1,8 @@
-import entries from './entries.js';
-import loader from './loader.js';
-import plugin from './plugin.js';
-import process from 'process';
-import config from './env.js';
+const entries = require('./entries.js');
+const loader = require('./loader.js');
+const plugin = require('./plugin.js');
+const process = require('process');
+const config = require('./env.js');
 
 let webpackConfig = {
   entry: entries,
