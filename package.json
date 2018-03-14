@@ -40,8 +40,8 @@
     "webpack-dev-server": "^2.11.1"
   },
   "scripts": {
-    "build": "cross-env NODE_ENV=development webpack -p --config './webpack/webpack.js'",
-    "dev": "cross-env NODE_ENV=production webpack-dev-server --open --color --config './webpack/webpack.js'",
+    "build": "cross-env NODE_ENV=production webpack -p --config './webpack/webpack.js'",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --color --config './webpack/webpack.js'",
     "fix": "./node_modules/.bin/eslint --fix"
   },
   "name": "jay-webpack-scaffold",
