@@ -40,14 +40,14 @@
     "webpack-dev-server": "^2.11.1"
   },
   "scripts": {
-    "build": "cross-env setting_path='/webpack/setting.js' NODE_ENV=development webpack -p --config './webpack/webpack.babel.js'",
-    "dev": "cross-env setting_path='/webpack/setting.js' NODE_ENV=production webpack-dev-server --color --config './webpack/webpack.babel.js'",
+    "build": "cross-env NODE_ENV=development webpack -p --config './webpack/webpack.js'",
+    "dev": "cross-env NODE_ENV=production webpack-dev-server --open --color --config './webpack/webpack.js'",
     "fix": "./node_modules/.bin/eslint --fix"
   },
   "name": "jay-webpack-scaffold",
   "description": "webpack",
   "version": "1.0.3",
-  "main": "webpack.config.js",
+  "main": "./webpack/config.js",
   "directories": {
     "test": "tests"
   },

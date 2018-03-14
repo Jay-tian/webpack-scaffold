@@ -1,5 +1,5 @@
 const process = require('process');
-const settingPath =  process.cwd() + process.env.setting_path;
+const settingPath =  process.cwd() + '/webpack/setting.js';
 const setting = require(settingPath);
 
 const env = {
