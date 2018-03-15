@@ -7,6 +7,8 @@ module.exports = {
     "globals": {
         "jQuery": true,
         "$": true,
+        "describe": true,
+        "it": true,
     },
     "extends": "eslint:recommended",
     "parserOptions": {

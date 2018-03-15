@@ -1,0 +1,98 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2018-03-15T01:23:46.581Z",
+    "end": "2018-03-15T01:23:46.586Z",
+    "duration": 5,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "passPercentClass": "success",
+    "pendingPercentClass": "danger"
+  },
+  "suites": {
+    "uuid": "def78ba9-f56f-48e3-b7b5-26b1affd980e",
+    "title": "",
+    "fullFile": "",
+    "file": "",
+    "beforeHooks": [],
+    "afterHooks": [],
+    "tests": [],
+    "suites": [
+      {
+        "uuid": "bce23553-e619-4de7-8a55-10b3720c20ab",
+        "title": "Array",
+        "fullFile": "/private/var/www/jay-webpack-scaffold/test/index.js",
+        "file": "/test/index.js",
+        "beforeHooks": [],
+        "afterHooks": [],
+        "tests": [],
+        "suites": [
+          {
+            "uuid": "5e5eb58d-f585-4225-bb1b-ff841a8bbf78",
+            "title": "#indexOf()",
+            "fullFile": "/private/var/www/jay-webpack-scaffold/test/index.js",
+            "file": "/test/index.js",
+            "beforeHooks": [],
+            "afterHooks": [],
+            "tests": [
+              {
+                "title": "should return -1 when the value is not present",
+                "fullTitle": "Array #indexOf() should return -1 when the value is not present",
+                "timedOut": false,
+                "duration": 1,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "code": "assert.equal([1,2,3].indexOf(4), -1);",
+                "err": {},
+                "isRoot": false,
+                "uuid": "ca7d58a1-0ea1-4462-b93f-198961bfb906",
+                "isHook": false,
+                "skipped": false
+              }
+            ],
+            "suites": [],
+            "passes": [
+              "ca7d58a1-0ea1-4462-b93f-198961bfb906"
+            ],
+            "failures": [],
+            "pending": [],
+            "skipped": [],
+            "duration": 1,
+            "root": false,
+            "rootEmpty": false,
+            "_timeout": 2000
+          }
+        ],
+        "passes": [],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 0,
+        "root": false,
+        "rootEmpty": false,
+        "_timeout": 2000
+      }
+    ],
+    "passes": [],
+    "failures": [],
+    "pending": [],
+    "skipped": [],
+    "duration": 0,
+    "root": true,
+    "rootEmpty": true,
+    "_timeout": 2000
+  },
+  "copyrightYear": 2018
+}
