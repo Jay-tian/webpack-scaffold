@@ -5,21 +5,21 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2018-03-15T02:14:22.438Z",
-    "end": "2018-03-15T02:14:22.442Z",
-    "duration": 4,
+    "start": "2018-03-16T01:42:19.801Z",
+    "end": "2018-03-16T01:42:19.808Z",
+    "duration": 7,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
-    "other": 1,
-    "hasOther": true,
+    "other": 0,
+    "hasOther": false,
     "skipped": 0,
     "hasSkipped": false,
     "passPercentClass": "success",
     "pendingPercentClass": "danger"
   },
   "suites": {
-    "uuid": "2d77527e-167c-4e14-9dfa-671958c187e1",
+    "uuid": "442ef770-567d-437c-b4ba-6a95d4f34705",
     "title": "",
     "fullFile": "",
     "file": "",
@@ -28,7 +28,7 @@
     "tests": [],
     "suites": [
       {
-        "uuid": "c13101a3-8eaa-481e-a7e6-44ded26ede5c",
+        "uuid": "1949152e-6a1b-4803-995d-374b6a82d195",
         "title": "Array",
         "fullFile": "/private/var/www/jay-webpack-scaffold/test/index.js",
         "file": "/test/index.js",
@@ -37,7 +37,7 @@
         "tests": [],
         "suites": [
           {
-            "uuid": "dac14ba4-1ece-4bcb-b769-d7258fd5163f",
+            "uuid": "229ab00c-57c9-4a9f-970a-49b39013b63a",
             "title": "#indexOf()",
             "fullFile": "/private/var/www/jay-webpack-scaffold/test/index.js",
             "file": "/test/index.js",
@@ -48,7 +48,7 @@
                 "title": "should return -1 when the value is not present",
                 "fullTitle": "Array #indexOf() should return -1 when the value is not present",
                 "timedOut": false,
-                "duration": 0,
+                "duration": 1,
                 "state": "passed",
                 "speed": "fast",
                 "pass": true,
@@ -57,19 +57,19 @@
                 "code": "assert.equal([1,2,3].indexOf(4), -1);",
                 "err": {},
                 "isRoot": false,
-                "uuid": "36ae433a-1131-4d00-9ed2-51cb4b85cdfe",
+                "uuid": "eef84c68-83f0-4141-8a1d-1540cedc0559",
                 "isHook": false,
                 "skipped": false
               }
             ],
             "suites": [],
             "passes": [
-              "36ae433a-1131-4d00-9ed2-51cb4b85cdfe"
+              "eef84c68-83f0-4141-8a1d-1540cedc0559"
             ],
             "failures": [],
             "pending": [],
             "skipped": [],
-            "duration": 0,
+            "duration": 1,
             "root": false,
             "rootEmpty": false,
             "_timeout": 2000
