@@ -1,7 +1,9 @@
 const process = require('process');
 const rootPath = process.cwd();
+const util = require('./util.js');
 
-let setting = {
+
+let defaultSetting = {
   entry: rootPath + '/src/js/',
   output: rootPath + '/dist/',
   publicPath: '/dist/', //publicPath 本地开发，文件引用路径
@@ -10,4 +12,9 @@ let setting = {
   env: process.env.NODE_ENV,
 };
 
-module.exports = setting;
+if (util.fsExistsSync()) {
+  let setting = require(rootPath + process.env.settingPath);
+  defaultSetting = Object.assign(defaultSetting, setting);
+}
+
+module.exports = defaultSetting;
