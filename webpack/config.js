@@ -6,6 +6,8 @@ let setting = {
   output: rootPath + '/dist/',
   publicPath: '/dist/', //publicPath 本地开发，文件引用路径
   author: 'tsj',
+  rootPath: process.cwd(),
+  env: process.env.NODE_ENV,
 };
 
 module.exports = setting;

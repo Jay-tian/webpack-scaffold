@@ -1,5 +1,5 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const config = require('./env.js');
+const config = require('./config.js');
 
 let loader = [
   {
@@ -26,7 +26,7 @@ let loader = [
   {
     test: /\.js?$/,
     exclude: /(node_modules)/,
-    include: config.setting.entry,
+    include: config.entry,
     loader: 'babel-loader',
     query: {
       cacheDirectory: true,

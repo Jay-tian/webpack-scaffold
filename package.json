@@ -42,16 +42,16 @@
     "webpack-dev-server": "^2.11.1"
   },
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack -p --config './webpack/webpack.js'",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --color --config './webpack/webpack.js'",
+    "build": "cross-env NODE_ENV=production setting='./webpack/setting.js' webpack -p --config './webpack/webpack.js'",
+    "dev": "cross-env NODE_ENV=development setting='./webpack/setting.js' webpack-dev-server --open --color --config './webpack/webpack.js'",
     "fix": "eslint --fix",
     "test": "mocha --recursive --reporter mochawesome test && node test/show-result.js",
      "test1": "mocha server-test "
   },
   "name": "jay-webpack-scaffold",
   "description": "webpack",
-  "version": "1.0.3",
-  "main": "./webpack/config.js",
+  "version": "1.0.4",
+  "main": "./webpack/webpack.js",
   "directories": {
     "test": "tests"
   },

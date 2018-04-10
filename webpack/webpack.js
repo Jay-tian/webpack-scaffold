@@ -2,14 +2,14 @@ const entries = require('./entries.js');
 const loader = require('./loader.js');
 const plugin = require('./plugin.js');
 const process = require('process');
-const config = require('./env.js');
+const config = require('./config.js');
 
 let webpackConfig = {
   entry: entries,
   output: {
-    path: config.setting.output, 
+    path: config.output, 
     filename: '[name].js',
-    publicPath: config.setting.publicPath,
+    publicPath: config.publicPath,
   },
   module: {
     loaders: loader,
