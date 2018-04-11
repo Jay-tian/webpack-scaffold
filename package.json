@@ -50,7 +50,7 @@
   },
   "name": "jay-webpack-scaffold",
   "description": "webpack",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "main": "./webpack/webpack.js",
   "directories": {
     "test": "tests"

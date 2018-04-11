@@ -12,8 +12,10 @@ let defaultSetting = {
   env: process.env.NODE_ENV,
 };
 
-if (util.fsExistsSync()) {
-  let setting = require(rootPath + process.env.settingPath);
+let settingPath = rootPath + process.env.settingPath;
+
+if (util.fsExistsSync(settingPath)) {
+  let setting = require(settingPath);
   defaultSetting = Object.assign(defaultSetting, setting);
 }
 
