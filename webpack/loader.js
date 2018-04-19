@@ -1,16 +1,9 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const config = require('./config.js');
+let babelList = [config.entry];
+babelList.push(require.resolve('codeages-design'));
 
 let loader = [
-  {
-    loader:'postcss-loader',
-    options: {
-      plugins: () => [
-        require('autoprefixer')(), //CSS浏览器兼容
-      ],
-      sourceMap: true,
-    }
-  },
   {
     test: /\.css$/,
     loaders: [
@@ -23,20 +16,35 @@ let loader = [
             require('autoprefixer')({
               broswers:['last 5 versions']
             })
-          ],
-          sourceMap: true,
+          ]
         },
       }
     ],
   },
   {
     test: /\.less$/,
-    loader: ExtractTextPlugin.extract({fallback: 'style-loader', use: 'css-loader!postcss-loader!less-loader'})
+    loader: ExtractTextPlugin.extract({fallback: 'style-loader', use: [
+      {
+        loader: 'css-loader'
+      },
+      {
+        loader: 'postcss-loader',
+        options: {
+          plugins: ()=>[
+            require('autoprefixer')({
+              broswers:['last 5 versions']
+            })
+          ]
+        },
+      },
+      {
+        loader: 'less-loader'
+      }
+    ]})
   },
   {
     test: /\.js?$/,
-    exclude: /(node_modules)/,
-    include: config.entry,
+    include: babelList,
     loader: 'babel-loader',
     query: {
       cacheDirectory: true,
