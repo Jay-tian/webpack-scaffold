@@ -3,6 +3,15 @@ const config = require('./config.js');
 
 let loader = [
   {
+    loader:'postcss-loader',
+    options: {
+      plugins: (loader) => [
+        require('autoprefixer')(), //CSS浏览器兼容
+      ],
+      sourceMap: true,
+    }
+  },
+  {
     test: /\.css$/,
     loaders: [
       'style-loader', 
@@ -14,7 +23,8 @@ let loader = [
             require('autoprefixer')({
               broswers:['last 5 versions']
             })
-          ]
+          ],
+          sourceMap: true,
         },
       }
     ],
