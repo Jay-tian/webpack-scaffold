@@ -1,7 +1,5 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const config = require('./config.js');
-let babelList = [config.entry];
-babelList.push(require.resolve('codeages-design'));
 
 let loader = [
   {
@@ -44,7 +42,7 @@ let loader = [
   },
   {
     test: /\.js?$/,
-    include: babelList,
+    include: config.entry,
     loader: 'babel-loader',
     query: {
       cacheDirectory: true,
