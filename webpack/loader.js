@@ -5,7 +5,7 @@ let loader = [
   {
     loader:'postcss-loader',
     options: {
-      plugins: (loader) => [
+      plugins: () => [
         require('autoprefixer')(), //CSS浏览器兼容
       ],
       sourceMap: true,
