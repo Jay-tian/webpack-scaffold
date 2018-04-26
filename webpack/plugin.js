@@ -19,12 +19,4 @@ let plugin = [
   }),
 ];
 
-if ('production' === config.env) {
-  plugin.push(new webpack.optimize.UglifyJsPlugin({
-    compress: {
-      warnings: false
-    }
-  }));
-}
-
 module.exports = plugin;

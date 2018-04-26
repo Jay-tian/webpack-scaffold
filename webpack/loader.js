@@ -46,7 +46,7 @@ let loader = [
     loader: 'babel-loader',
     query: {
       cacheDirectory: true,
-      presets: ['latest'],
+      presets: ['es2015'],
       plugins: ['transform-runtime']
     }
   },
