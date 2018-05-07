@@ -4,20 +4,11 @@ const config = require('./config.js');
 let loader = [
   {
     test: /\.css$/,
-    loaders: [
-      'style-loader', 
-      'css-loader?importLoaders=1', 
+    loader: ExtractTextPlugin.extract({fallback: 'style-loader', use: [
       {
-        loader: 'postcss-loader',
-        options: {
-          plugins: ()=>[
-            require('autoprefixer')({
-              broswers:['last 5 versions']
-            })
-          ]
-        },
-      }
-    ],
+        loader: 'css-loader'
+      },     
+    ]})
   },
   {
     test: /\.less$/,
