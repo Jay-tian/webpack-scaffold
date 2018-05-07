@@ -60,15 +60,15 @@ let loader = [
       name: 'image/[hash:10].[ext]',
     }
   },
-  {
-    enforce: 'pre',
-    test:/\.(js|html)$/,
-    exclude:['/bootstrap/', '/node_modules/'],
-    loader: 'eslint-loader',
-    options: {
-      fix: true,
-    }
-  },
+  // {
+  //   enforce: 'pre',
+  //   test:/\.(js|html)$/,
+  //   exclude:['/bootstrap/', '/node_modules/'],
+  //   loader: 'eslint-loader',
+  //   options: {
+  //     fix: true,
+  //   }
+  // },
 ];
 
 module.exports = loader;

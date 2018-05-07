@@ -8,11 +8,11 @@ let webpackConfig = {
   entry: entries,
   output: {
     path: config.output, 
-    filename: '[name].js',
+    filename: '[name]_[hash].js',
     publicPath: config.publicPath,
   },
   module: {
-    loaders: loader,
+    rules: loader,
   },
   plugins: plugin,
 };

@@ -6,10 +6,17 @@ const config = require('./config.js');
 let plugin = [
   new webpack.BannerPlugin(config.author),
   new webpack.HotModuleReplacementPlugin(),
-  new ExtractTextPlugin('[name].css', {
+  new ExtractTextPlugin('[name]_[chunkhash].css', {
     allChunks: true
   }),
-  new webpack.optimize.CommonsChunkPlugin('common'),
+  new webpack.optimize.SplitChunksPlugin({
+    chunks: 'all',
+    minSize: 20000,
+    minChunks: 1,
+    maxAsyncRequests: 5,
+    maxInitialRequests: 3,
+    name: true
+  }),
   new webpack.ProvidePlugin({
     $: 'jquery', 
     jQuery: 'jquery', 
