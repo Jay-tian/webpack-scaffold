@@ -9,9 +9,10 @@ let defaultSetting = {
   output: rootPath + '/dist/',
   publicPath: '/dist/', //publicPath 本地开发，文件引用路径
   author: 'tsj',
-  rootPath: process.cwd(),
+  rootPath: rootPath,
   env: process.env.NODE_ENV,
-  htmlPaths: glob.sync(path.join(rootPath, '/index.html'))
+  htmlPaths: glob.sync(path.join(rootPath, '/index.html')),
+  copyLibs: ['validator'],
 };
 
 let settingPath = rootPath + process.env.settingPath;

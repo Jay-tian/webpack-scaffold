@@ -2,6 +2,8 @@
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const config = require('./config.js');
+const util = require('./util.js');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 // const PurifyPlugin = require('purifycss-webpack');
 
 let plugin = [
@@ -12,36 +14,26 @@ let plugin = [
     chunkFilename: '[id].css'
   }),
   new webpack.optimize.SplitChunksPlugin({
-    chunks: 'all',
-    minSize: 20000,
+    chunks: 'async',
+    minSize: 30000,
     minChunks: 1,
     maxAsyncRequests: 5,
     maxInitialRequests: 3,
-    name: true
+    automaticNameDelimiter: '~',
+    name: true,
+    cacheGroups: {
+      vendors: {
+        test: /[\\/]node_modules[\\/]/,
+        priority: -10
+      },
+      default: {
+        minChunks: 2,
+        priority: -20,
+        reuseExistingChunk: true
+      }
+    }
   }),
-  // new PurifyPlugin({
-  //   moduleExtensions: [
-  //     '.html',
-  //     '.pug',
-  //     '.js',
-  //     '.jsx',
-  //     '.ts',
-  //     '.tsx',
-  //   ],
-  //   paths: config.htmlPaths,
-  //   purifyOptions: {
-  //     info: true,
-  //     minify: true,
-  //     rejected: false,
-  //   },
-  //   styleExtensions: [
-  //     '.css',
-  //     '.less',
-  //     '.sass',
-  //     '.scss',
-  //     '.styl',
-  //   ],
-  // }),
+  new CopyWebpackPlugin(util.handleCopyConfig(config.copyLibs)),
   new webpack.ProvidePlugin({
     $: 'jquery', 
     jQuery: 'jquery', 
