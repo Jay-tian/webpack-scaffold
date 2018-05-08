@@ -1,21 +1,12 @@
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const config = require('./config.js');
 
 let loader = [
   {
     test: /\.css$/,
-    loader: ExtractTextPlugin.extract({fallback: 'style-loader', use: [
-      {
-        loader: 'css-loader'
-      },     
-    ]})
-  },
-  {
-    test: /\.less$/,
-    loader: ExtractTextPlugin.extract({fallback: 'style-loader', use: [
-      {
-        loader: 'css-loader'
-      },
+    use: [
+      MiniCssExtractPlugin.loader,
+      'css-loader?importLoaders=1',
       {
         loader: 'postcss-loader',
         options: {
@@ -25,11 +16,25 @@ let loader = [
             })
           ]
         },
-      },
-      {
-        loader: 'less-loader'
       }
-    ]})
+    ]
+  },
+  {
+    test: /\.less$/,
+    use: [
+      MiniCssExtractPlugin.loader,
+      'css-loader?importLoaders=1',
+      {
+        loader: 'postcss-loader',
+        options: {
+          plugins: ()=>[
+            require('autoprefixer')({
+              broswers:['last 5 versions']
+            })
+          ]
+        },
+      }
+    ],
   },
   {
     test: /\.js?$/,

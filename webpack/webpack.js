@@ -8,7 +8,7 @@ let webpackConfig = {
   entry: entries,
   output: {
     path: config.output, 
-    filename: '[name]_[hash].js',
+    filename: '[name].js',
     publicPath: config.publicPath,
   },
   module: {

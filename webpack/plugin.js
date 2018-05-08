@@ -1,13 +1,14 @@
 
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const config = require('./config.js');
 
 let plugin = [
   new webpack.BannerPlugin(config.author),
   new webpack.HotModuleReplacementPlugin(),
-  new ExtractTextPlugin('[name]_[chunkhash].css', {
-    allChunks: true
+  new MiniCssExtractPlugin({
+    filename: '[name].css',
+    chunkFilename: '[id].css'
   }),
   new webpack.optimize.SplitChunksPlugin({
     chunks: 'all',
