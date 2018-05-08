@@ -34,13 +34,15 @@
     "popper": "^1.0.1",
     "popper.js": "^1.12.9",
     "postcss-loader": "^2.1.0",
+    "purify-css": "^1.2.5",
+    "purifycss-webpack": "^0.7.0",
     "react": "15.0.0",
     "react-dom": "15.0.0",
     "react-lazy-load": "^3.0.13",
     "style-loader": "^0.20.1",
     "url-loader": "^0.6.2",
     "webpack": "^4.7.0",
-    "webpack-dev-server": "^2.11.1"
+    "webpack-dev-server": "^3.1.4"
   },
   "scripts": {
     "build": "webpack --mode production -p --config './webpack/webpack.js'",

@@ -1,7 +1,8 @@
 const process = require('process');
 const rootPath = process.cwd();
 const util = require('./util.js');
-
+const glob = require('glob');
+const path = require('path');
 
 let defaultSetting = {
   entry: rootPath + '/src/js/',
@@ -10,6 +11,7 @@ let defaultSetting = {
   author: 'tsj',
   rootPath: process.cwd(),
   env: process.env.NODE_ENV,
+  htmlPaths: glob.sync(path.join(rootPath, '/index.html'))
 };
 
 let settingPath = rootPath + process.env.settingPath;

@@ -2,6 +2,7 @@
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const config = require('./config.js');
+// const PurifyPlugin = require('purifycss-webpack');
 
 let plugin = [
   new webpack.BannerPlugin(config.author),
@@ -18,6 +19,29 @@ let plugin = [
     maxInitialRequests: 3,
     name: true
   }),
+  // new PurifyPlugin({
+  //   moduleExtensions: [
+  //     '.html',
+  //     '.pug',
+  //     '.js',
+  //     '.jsx',
+  //     '.ts',
+  //     '.tsx',
+  //   ],
+  //   paths: config.htmlPaths,
+  //   purifyOptions: {
+  //     info: true,
+  //     minify: true,
+  //     rejected: false,
+  //   },
+  //   styleExtensions: [
+  //     '.css',
+  //     '.less',
+  //     '.sass',
+  //     '.scss',
+  //     '.styl',
+  //   ],
+  // }),
   new webpack.ProvidePlugin({
     $: 'jquery', 
     jQuery: 'jquery', 

@@ -5,14 +5,15 @@ let loader = [
   {
     test: /\.css$/,
     use: [
+      'style-loader',
       MiniCssExtractPlugin.loader,
-      'css-loader?importLoaders=1',
+      'css-loader',
       {
         loader: 'postcss-loader',
         options: {
           plugins: ()=>[
             require('autoprefixer')({
-              broswers:['last 5 versions']
+              broswers:['last 5 versions', '> 1%','not ie <= 8']
             })
           ]
         },
@@ -22,14 +23,15 @@ let loader = [
   {
     test: /\.less$/,
     use: [
+      'style-loader',
       MiniCssExtractPlugin.loader,
-      'css-loader?importLoaders=1',
+      'css-loader',
       {
         loader: 'postcss-loader',
         options: {
           plugins: ()=>[
             require('autoprefixer')({
-              broswers:['last 5 versions']
+              broswers:['last 5 versions', '> 1%', 'not ie <= 8']
             })
           ]
         },
