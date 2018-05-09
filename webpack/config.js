@@ -8,11 +8,13 @@ let defaultSetting = {
   entry: rootPath + '/src/js/',
   output: rootPath + '/dist/',
   publicPath: '/dist/', //publicPath 本地开发，文件引用路径
-  author: 'tsj',
+  author: 'jay',
   rootPath: rootPath,
   env: process.env.NODE_ENV,
   htmlPaths: glob.sync(path.join(rootPath, '/index.html')),
-  copyLibs: ['validator'],
+  copyLibs: ['validator', 'swiper'],
+  mainJs: rootPath + '/src/js/app.js',
+  lessPath: rootPath + '/src/less/',
 };
 
 let settingPath = rootPath + process.env.settingPath;

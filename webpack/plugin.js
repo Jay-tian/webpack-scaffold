@@ -8,7 +8,6 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 let plugin = [
   new webpack.BannerPlugin(config.author),
-  new webpack.HotModuleReplacementPlugin(),
   new MiniCssExtractPlugin({
     filename: '[name].css',
     chunkFilename: '[id].css'
@@ -34,13 +33,6 @@ let plugin = [
     }
   }),
   new CopyWebpackPlugin(util.handleCopyConfig(config.copyLibs)),
-  new webpack.ProvidePlugin({
-    $: 'jquery', 
-    jQuery: 'jquery', 
-    'window.jQuery': 'jquery',
-    'window.$': 'jquery',
-    Popper: ['popper.js', 'default'],
-  }),
 ];
 
 module.exports = plugin;

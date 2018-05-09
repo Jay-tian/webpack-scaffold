@@ -1,1 +1,2 @@
-require('./../../less/page/index.less');
+let a = 1;
+console.log(a);

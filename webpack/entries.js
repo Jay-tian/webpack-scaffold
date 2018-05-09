@@ -10,6 +10,12 @@ files.forEach(function(f){
   entries[name] = f;
 });
 
-entries = Object.assign({}, {'app': fileRootPath + 'app.js'}, entries);
+let lessEntries = glob.sync(config.lessPath + '**/*.less');
+lessEntries.forEach(function(f){
+  var name = f.replace(config.lessPath, '/less/').replace('.less', '');
+  entries[name] = f;
+});
+
+entries = Object.assign({}, {'app': config.mainJs}, entries);
 
 module.exports = entries;
