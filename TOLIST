@@ -1,0 +1,2 @@
+1. purifycss-webpack 打包是去除无用的css
+2. less入口文件时，同时产生js文件

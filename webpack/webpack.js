@@ -5,7 +5,6 @@ const process = require('process');
 const config = require('./config.js');
 
 let webpackConfig = {
-  mode: 'production',
   entry: entries,
   output: {
     path: config.output, 
