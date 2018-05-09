@@ -17,7 +17,7 @@ exports.handleCopyConfig = function(list){
   list.forEach(function(name) {
     copyConfig.push({
       from: path.join(rootPath + '/node_modules/', name),
-      to: path.join(rootPath, '/dist/libs/' + name),
+      to: path.join(rootPath, '/dist/js/libs/' + name),
       toType: 'dir',
       ignore: ['*.md', 'LICENSE', 'package.json', 'package-lock.json', 'gulpfile.js', 'composer.json', 'bower.json']
     });

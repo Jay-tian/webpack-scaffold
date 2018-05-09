@@ -6,16 +6,16 @@ let files = glob.sync(fileRootPath + '**/index.js');
 
 let entries = {};
 files.forEach(function(f){
-  var name = f.replace(fileRootPath, '').replace('.js', '');
+  var name = f.replace(fileRootPath, '/js/').replace('.js', '');
   entries[name] = f;
 });
 
 let lessEntries = glob.sync(config.lessPath + '**/*.less');
 lessEntries.forEach(function(f){
-  var name = f.replace(config.lessPath, '/less/').replace('.less', '');
+  var name = f.replace(config.lessPath, '/css/').replace('.less', '');
   entries[name] = f;
 });
 
-entries = Object.assign({}, {'app': config.mainJs}, entries);
+entries = Object.assign({}, {'/js/app': config.mainJs}, entries);
 
 module.exports = entries;
