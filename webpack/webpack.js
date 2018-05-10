@@ -11,7 +11,7 @@ let webpackConfig = {
     publicPath: config.publicPath,
   },
   externals: {
-    jquery: 'window.$',
+    jquery: 'jQuery',
   },
   module: {
     rules: loader,
