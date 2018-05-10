@@ -48,7 +48,7 @@
   },
   "scripts": {
     "build": "webpack --mode production -p --config './webpack/webpack.js'",
-    "dev": "webpack-dev-server --mode development --open --color --config './webpack/webpack.js'",
+    "dev": "webpack --watch --mode development --config './webpack/webpack.js' & open ./index.html",
     "fix": "eslint --fix",
     "test": "mocha --recursive --reporter mochawesome test && node test/show-result.js",
     "test1": "mocha server-test "
