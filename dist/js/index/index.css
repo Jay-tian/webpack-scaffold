@@ -1,0 +1,38 @@
+/*! jay */
+.header-bg{
+    background: url(/dist/image/c5814647cf.jpg) no-repeat center center;
+    background-size: cover;
+    background-position-y: -16rem;
+    color: #fff;
+    height: 10rem;
+    line-height: 10rem;
+}
+
+.sidebar{
+    ul,
+    li{
+        list-style: none;
+    }
+    padding: 0;
+    line-height: 2rem;
+    font-size: 1rem;
+    a{
+        color: #99979c;
+        &:hover{
+            color: #007bff;
+        }
+    }
+}
+
+.list-block{
+    margin: 1rem;
+    padding: .5rem;
+    background: #f1f1f1;
+    border-radius: .6rem;
+    line-height: 2rem;
+    .title{
+        font-size: 1.5rem;
+    }
+}
+
+/*# sourceMappingURL=index.css.map*/

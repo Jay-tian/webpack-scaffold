@@ -4,7 +4,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const config = require('./config.js');
 const util = require('./util.js');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-// const PurifyCSSPlugin = require('purifycss-webpack');
+const PurifyCSSPlugin = require('purifycss-webpack');
 
 let plugin = [
   new webpack.BannerPlugin(config.author),
@@ -35,9 +35,9 @@ let plugin = [
     }
   }),
   new CopyWebpackPlugin(util.handleCopyConfig(config.copyLibs)),
-  // new PurifyCSSPlugin({
-  //   paths: config.purifyCssPaths,
-  // })
+  new PurifyCSSPlugin({
+    paths: config.purifyCssPaths,
+  })
 ];
 
 module.exports = plugin;

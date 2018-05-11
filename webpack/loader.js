@@ -1,42 +1,35 @@
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const config = require('./config.js');
 
 let loader = [
   {
     test: /\.css$/,
-    use: [
-      'style-loader',
-      MiniCssExtractPlugin.loader,
-      'css-loader',
+    loader: ExtractTextPlugin.extract({fallback: 'style-loader', use: [
       {
-        loader: 'postcss-loader',
-        options: {
-          plugins: ()=>[
-            require('autoprefixer')({
-              broswers:['last 5 versions', '> 1%','not ie <= 8']
-            })
-          ]
-        },
-      }
-    ]
-  }, 
+        loader: 'css-loader'
+      },     
+    ]})
+  },
   {
     test: /\.less$/,
-    use: [
-      'style-loader',
-      MiniCssExtractPlugin.loader,
-      'css-loader',
+    loader: ExtractTextPlugin.extract({fallback: 'style-loader', use: [
+      {
+        loader: 'css-loader'
+      },
       {
         loader: 'postcss-loader',
         options: {
           plugins: ()=>[
             require('autoprefixer')({
-              broswers:['last 5 versions', '> 1%', 'not ie <= 8']
+              broswers:['last 5 versions']
             })
           ]
         },
+      },
+      {
+        loader: 'less-loader'
       }
-    ],
+    ]})
   },
   {
     test: /\.js?$/,
