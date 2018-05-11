@@ -2,9 +2,23 @@
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const config = require('./config.js');
-const util = require('./util.js');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const PurifyCSSPlugin = require('purifycss-webpack');
+const path = require('path');
+
+const getCopyPaths = function(list){
+  let copyConfig = [];
+  list.forEach(function(name) {
+    copyConfig.push({
+      from: path.join(config.rootPath + '/node_modules/', name),
+      to: path.join(config.output, '/js/libs/' + name),
+      toType: 'dir',
+      ignore: ['*.md', 'LICENSE', 'package.json', 'package-lock.json', 'gulpfile.js', 'composer.json', 'bower.json']
+    });
+  });
+
+  return copyConfig;
+};
 
 let plugin = [
   new webpack.BannerPlugin(config.author),
@@ -34,7 +48,7 @@ let plugin = [
       }
     }
   }),
-  new CopyWebpackPlugin(util.handleCopyConfig(config.copyLibs)),
+  new CopyWebpackPlugin(getCopyPaths(config.copyLibs)),
   new PurifyCSSPlugin({
     paths: config.purifyCssPaths,
   })
