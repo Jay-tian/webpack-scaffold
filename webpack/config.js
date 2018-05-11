@@ -11,7 +11,7 @@ let defaultSetting = {
   author: 'jay',
   rootPath: rootPath,
   env: process.env.NODE_ENV,
-  htmlPaths: glob.sync(path.join(rootPath, '/index.html')),
+  purifyCssPaths: glob.sync(path.join(rootPath, '/index.html')),
   copyLibs: ['validator', 'swiper', 'jquery'],
   mainJs: rootPath + '/src/js/app.js',
   lessPath: rootPath + '/src/less/',
