@@ -19,7 +19,7 @@ let loader = [
         },
       }
     ]
-  },
+  }, 
   {
     test: /\.less$/,
     use: [

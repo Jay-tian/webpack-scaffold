@@ -1,6 +1,6 @@
 
 const webpack = require('webpack');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const config = require('./config.js');
 const util = require('./util.js');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -8,9 +8,11 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 let plugin = [
   new webpack.BannerPlugin(config.author),
-  new MiniCssExtractPlugin({
-    filename: '[name].css',
-    chunkFilename: '[id].css'
+  new ExtractTextPlugin({
+    filename:  (getPath) => {
+      return getPath('[name].css').replace('js', 'css');
+    },
+    allChunks: true
   }),
   new webpack.optimize.SplitChunksPlugin({
     chunks: 'async',

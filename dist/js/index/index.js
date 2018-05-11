@@ -80,11 +80,8 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-
-
-console.log($);
+eval("\n\nconsole.log($);\n\n//# sourceURL=webpack:///./src/js/index/index.js?");
 
 /***/ })
 
 /******/ });
-//# sourceMappingURL=index.js.map
