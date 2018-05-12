@@ -31,6 +31,7 @@
     "mime": "^2.2.0",
     "mini-css-extract-plugin": "^0.4.0",
     "open": "^0.0.5",
+    "optimize-css-assets-webpack-plugin": "^4.0.1",
     "particles.js": "^2.0.0",
     "popper": "^1.0.1",
     "popper.js": "^1.12.9",

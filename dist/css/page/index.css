@@ -1,6 +1,6 @@
 /*! jay */
 .header-bg {
-  background: url(/dist/image/c5814647cf.jpg) no-repeat 50%;
+  background: url(/dist/image/c5814647cf.jpg) no-repeat center center;
   background-size: cover;
   background-position-y: -16rem;
   color: #fff;
@@ -14,7 +14,7 @@
   font-size: 1rem;
 }
 
-.sidebar li,.sidebar ul {
+.sidebar ul,.sidebar li {
   list-style: none;
 }
 

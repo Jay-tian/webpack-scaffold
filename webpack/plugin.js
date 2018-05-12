@@ -4,6 +4,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const config = require('./config.js');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const PurifyCSSPlugin = require('purifycss-webpack');
+var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const path = require('path');
 
 const getCopyPaths = function(list){
@@ -51,7 +52,12 @@ let plugin = [
   new CopyWebpackPlugin(getCopyPaths(config.copyLibs)),
   new PurifyCSSPlugin({
     paths: config.purifyCssPaths,
-  })
+  }),
+  new OptimizeCssAssetsPlugin({
+    cssProcessor: require('cssnano'),
+    cssProcessorOptions: { discardComments: { removeAll: true } },
+    canPrint: true
+  }),
 ];
 
 module.exports = plugin;
