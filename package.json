@@ -51,6 +51,7 @@
   "scripts": {
     "build": "webpack --mode production -p --config './webpack/webpack.js'",
     "dev": "webpack --watch --mode development --config './webpack/webpack.js' & open ./index.html",
+    "dev1": "nodemon './webpack/webpack-dev.js'",
     "fix": "eslint --fix",
     "test": "mocha --recursive --reporter mochawesome test && node test/show-result.js",
     "test1": "mocha server-test "

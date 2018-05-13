@@ -67,20 +67,19 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/js/index/index.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/less/page/course/manage.less");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/js/index/index.js":
-/*!*******************************!*\
-  !*** ./src/js/index/index.js ***!
-  \*******************************/
+/***/ "./src/less/page/course/manage.less":
+/*!******************************************!*\
+  !*** ./src/less/page/course/manage.less ***!
+  \******************************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-eval("\n\nconsole.log($);\n\n//# sourceURL=webpack:///./src/js/index/index.js?");
+eval("// removed by extract-text-webpack-plugin\n\n//# sourceURL=webpack:///./src/less/page/course/manage.less?");
 
 /***/ })
 
