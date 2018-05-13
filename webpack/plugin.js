@@ -4,7 +4,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const config = require('./config.js');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const PurifyCSSPlugin = require('purifycss-webpack');
-var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const removeWebpackPlugin = require('jay-remove-webpack-plugin');
 const path = require('path');
 
 const getCopyPaths = function(list){
@@ -57,6 +58,9 @@ let plugin = [
     cssProcessor: require('cssnano'),
     cssProcessorOptions: { discardComments: { removeAll: true } },
     canPrint: true
+  }),
+  new removeWebpackPlugin({
+    filterPath: /^\/css\/.*\.js?$/
   }),
 ];
 

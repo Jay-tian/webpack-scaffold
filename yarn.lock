@@ -4917,6 +4917,10 @@ isurl@^1.0.0-alpha5:
     has-to-string-tag-x "^1.2.0"
     is-object "^1.0.1"
 
+jay-remove-webpack-plugin@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/jay-remove-webpack-plugin/-/jay-remove-webpack-plugin-1.0.0.tgz#79495edc7bdde5e4a581c6ae8a3567fa14a828c7"
+
 jest-diff@^22.4.0:
   version "22.4.0"
   resolved "http://registry.npm.taobao.org/jest-diff/download/jest-diff-22.4.0.tgz#384c2b78519ca44ca126382df53f134289232525"
