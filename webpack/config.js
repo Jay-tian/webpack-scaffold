@@ -15,7 +15,7 @@ let defaultSetting = {
   copyLibs: [
     'validator', 
     'swiper/dist',
-    'jquery/dist/jquery.min.js'
+    'jquery/dist'
   ],
   mainJs: rootPath + '/src/js/app.js',
   lessPath: rootPath + '/src/less/',
