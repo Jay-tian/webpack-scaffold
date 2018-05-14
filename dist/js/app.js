@@ -114,7 +114,7 @@ eval("var g;\r\n\r\n// This works in non-strict mode\r\ng = (function() {\r\n\tr
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\n__webpack_require__(/*! bootstrap */ \"./node_modules/bootstrap/dist/js/bootstrap.js\");\nconsole.log(123);\n\n//# sourceURL=webpack:///./src/js/app.js?");
+eval("\n\n__webpack_require__(/*! bootstrap */ \"./node_modules/bootstrap/dist/js/bootstrap.js\");\n\n//# sourceURL=webpack:///./src/js/app.js?");
 
 /***/ }),
 

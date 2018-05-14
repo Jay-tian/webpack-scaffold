@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "antd": "^2.13.1",
     "autoprefixer": "^7.2.5",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
@@ -20,16 +19,16 @@
     "eslint-plugin-react": "^7.7.0",
     "expect": "^22.4.0",
     "expose-loader": "^0.7.4",
-    "express": "^4.15.4",
     "extract-text-webpack-plugin": "next",
     "file-loader": "^1.1.6",
     "glob": "^7.1.2",
     "jay-remove-webpack-plugin": "^1.0.0",
     "jquery": "^3.3.1",
     "jquery-validation": "^1.17.0",
+    "koa": "^2.5.1",
     "less": "^2.7.2",
     "less-loader": "^4.0.5",
-    "mime": "^2.2.0",
+    "mime": "^2.3.1",
     "mini-css-extract-plugin": "^0.4.0",
     "open": "^0.0.5",
     "optimize-css-assets-webpack-plugin": "^4.0.1",
@@ -50,8 +49,8 @@
   },
   "scripts": {
     "build": "webpack --mode production -p --config './webpack/webpack.js'",
-    "dev": "webpack --watch --mode development --config './webpack/webpack.js' & open ./index.html",
-    "dev1": "nodemon './webpack/webpack-dev.js'",
+    "watch": "webpack --watch --mode development --config './webpack/webpack.js' & open ./index.html",
+    "dev": "webpack-dev-server --open --mode development --config './webpack/webpack.js'",
     "fix": "eslint --fix",
     "test": "mocha --recursive --reporter mochawesome test && node test/show-result.js",
     "test1": "mocha server-test "
