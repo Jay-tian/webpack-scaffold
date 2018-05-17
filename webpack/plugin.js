@@ -61,7 +61,7 @@ let plugin = [
     canPrint: true
   }),
   new removeWebpackPlugin({
-    filterPath: /^\/css\/.*\.js?$/
+    filterPath: config.removePattern,
   }),
 ];
 if ('production' == config.env) {

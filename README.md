@@ -26,6 +26,7 @@
   lessPath: 需要编译输出的less 根路径，该目录下，都会被编译输出
   publicPath: 开发环境下，使用路径
   author: 作者名称
+  removePattern: 不需要被输出的文件路径 正则表达式，例如 /^\/css\/.*\.js?$/，表示css目录下的所有js文件都不输出
   purifyCssPaths: 被使用到css的所有文件地址，如html页面和js，它会过滤除了这些被使用的css样式
   copyLibs: 需要拷贝的类库
 ```
