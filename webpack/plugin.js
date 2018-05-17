@@ -31,9 +31,6 @@ let plugin = [
     },
     allChunks: true
   }),
-  new CleanWebpackPlugin([config.output], {
-    root: config.rootPath
-  }),
   new webpack.optimize.SplitChunksPlugin({
     chunks: 'async',
     minSize: 30000,
@@ -67,5 +64,10 @@ let plugin = [
     filterPath: /^\/css\/.*\.js?$/
   }),
 ];
+if ('production' == config.env) {
+  plugin.push(new CleanWebpackPlugin([config.output], {
+    root: config.rootPath
+  }));
+}
 
 module.exports = plugin;

@@ -49,9 +49,9 @@
     "webpack-dev-server": "^3.1.4"
   },
   "scripts": {
-    "build": "webpack --mode production -p --config './webpack/webpack.js'",
-    "watch": "webpack --watch --mode development --config './webpack/webpack.js' & open ./index.html",
-    "dev": "webpack-dev-server --mode development --config './webpack/webpack.js'",
+    "build": "NODE_ENV=production webpack --config './webpack/webpack.js'",
+    "watch": "NODE_ENV=development webpack --watch --config './webpack/webpack.js'",
+    "dev": "NODE_ENV=development webpack-dev-server --config './webpack/webpack.js'",
     "fix": "eslint --fix",
     "test": "mocha --recursive --reporter mochawesome test && node test/show-result.js",
     "test1": "mocha server-test "

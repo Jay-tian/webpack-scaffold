@@ -7,14 +7,14 @@ let lessEntries = glob.sync(config.lessPath + '**/*.less');
 
 let entries = {};
 files.forEach(function(f){
-  var name = f.replace(fileRootPath, '/js/').replace('.js', '');
+  var name = f.replace(fileRootPath, 'js/').replace('.js', '');
   entries[name] = f;
 });
 lessEntries.forEach(function(f){
-  var name = f.replace(config.lessPath, '/css/').replace('.less', '');
+  var name = f.replace(config.lessPath, 'css/').replace('.less', '');
   entries[name] = f;
 });
 
-entries = Object.assign({}, {'/js/app': config.mainJs}, entries);
+entries = Object.assign({}, {'js/app': config.mainJs}, entries);
 
 module.exports = entries;
