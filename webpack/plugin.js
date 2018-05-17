@@ -6,6 +6,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const PurifyCSSPlugin = require('purifycss-webpack');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const removeWebpackPlugin = require('jay-remove-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const path = require('path');
 
 const getCopyPaths = function(list){
@@ -29,6 +30,9 @@ let plugin = [
       return getPath('[name].css').replace('js', 'css');
     },
     allChunks: true
+  }),
+  new CleanWebpackPlugin([config.output], {
+    root: config.rootPath
   }),
   new webpack.optimize.SplitChunksPlugin({
     chunks: 'async',
