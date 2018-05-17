@@ -10,7 +10,6 @@ let webpackConfig = {
     filename: '[name].js',
     publicPath: config.publicPath,
   },
-  devtool: 'source-map',
   devServer: {
     // 设置服务器访问的基本目录
     contentBase: config.output, //最好设置成绝对路径
