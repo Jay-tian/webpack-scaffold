@@ -3,6 +3,7 @@ const rootPath = process.cwd();
 const util = require('./util.js');
 const glob = require('glob');
 const path = require('path');
+const env = process.env.NODE_ENV ? process.env.NODE_ENV : 'production';
 
 let defaultSetting = {
   entry: rootPath + '/src/js/',
@@ -10,7 +11,7 @@ let defaultSetting = {
   publicPath: '/dist/', //publicPath 本地开发，文件引用路径
   author: 'jay',
   rootPath: rootPath,
-  env: process.env.NODE_ENV,
+  env: env,
   purifyCssPaths: glob.sync(path.join(rootPath, '/index.html')),
   copyLibs: [
     'validator', 

@@ -9,14 +9,14 @@
 
 ## 下载依赖
 ```
-  yarn
+  yarn add jay-webpack-scaffold
 ```
 
 ## 配置文件
 ```
-  cp ./webpack/setting.dist.js targetPath
+  cp ./node_modules/jay-webpack-scaffold/webpack/config.dist.js ./webpack-config.js
 ```
-配置： 入口目录和输出口目录
+根据需求调整相应目录
 
 ### 配置文件参数
 ```
@@ -46,19 +46,26 @@
 目录下的index.js命名的文件将会作为输出文件
 不是index.js命名的会作为通用模块使用
 
-## 命令
+## 命令(scripts)
+```
+  "scripts": {
+    "build": "NODE_ENV=production settingPath='/webpack-config.js' webpack --config    '/node_modules/jay-webpack-scaffold/webpack/webpack.js'",
+    "dev": "NODE_ENV=development settingPath='webpack-config.js' webpack-dev-server --config '/node_modules/jay-webpack-scaffold/webpack/webpack.js'",
+  }
+```
+setting.js
 本地开发环境执行以下命令：
 ```
 npm run dev
 ```
-它将会文件生成好，放入内存中。他会监听文件变化
+它将会文件生成好，放入内存中。自动监听文件变化
 <br/>
 
 生产环境执行以下命令：
 ```
 npm run build
 ```
-它将会生产静态资源文件到dist目录下
+它将会生产静态资源文件到你定义的目录下
 
 ## ngixn配置
 ```
