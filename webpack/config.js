@@ -7,7 +7,7 @@ const env = process.env.NODE_ENV ? process.env.NODE_ENV : 'production';
 
 let defaultSetting = {
   entry: rootPath + '/src/js/',
-  output: rootPath + '/public/dist/',
+  output: rootPath + '/dist/',
   publicPath: '/dist/', //publicPath 本地开发，文件引用路径
   author: 'jay',
   rootPath: rootPath,

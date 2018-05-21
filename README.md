@@ -1,11 +1,13 @@
-# webpack-scaffold
+## 基于webpack4
 
 ## 功能列表
 1. 模块化管理资源文件，解析编译ES6语法
 2. 编译less文件，自动添加浏览器前缀
 3. 压缩js,css文件
-4. 去除多余css(未被使用)，减少css大小，优化css结构
+4. 去除多余css(未被使用)，减少css大小，优化css结构，减少50%-80%的文件大小
 5. 自动校验js语法，并自动修复部分语法格式问题
+6. 支持iconfont字体文件
+7. 自动引入html5shiv、respond，兼容h5标签以及响应式
 
 ## 下载依赖
 ```
@@ -98,14 +100,6 @@ location ~ ^/dist {
 ```
 任何/dist/* 的请求，都会代理到http://127.0.0.1:8082，根据不同需求相应配置
 
-
-## 参与开发
-1. 下载项目： git clone https://github.com/Jay-tian/webpack-scaffold.git
-2. 启动服务：进入项目根目录，执行 npm run dev
-3. 将会打开 http://127.0.0.1:8082/，资源文件在src下,修改代码将会时时生效
-4. http://127.0.0.1:8082/webpack-dev-server, 该路径提供了编译输出的资源路径（资源不是实体文件）
-5. 欢迎提交merge request
-
 ## 异常情况
 
 ### npm run dev 执行报错
@@ -115,3 +109,11 @@ location ~ ^/dist {
 lsof -i:8082 （查看占用端口进程）
  kill -9 PID (pid 为进程id号)
 ```
+
+## 参与开发
+1. 下载项目： git clone https://github.com/Jay-tian/webpack-scaffold.git
+2. 启动服务：进入项目根目录，执行 npm run dev
+3. 将会打开 http://127.0.0.1:8082/，资源文件在src下,修改代码将会时时生效
+4. http://127.0.0.1:8082/webpack-dev-server, 该路径提供了编译输出的资源路径（资源不是实体文件）
+5. 欢迎提交merge request
+

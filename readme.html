@@ -1,0 +1,116 @@
+<h2>基于webpack4</h2>
+
+<h2>功能列表</h2>
+
+<ol><li>模块化管理资源文件，解析编译ES6语法</li><li>编译less文件，自动添加浏览器前缀</li><li>压缩js,css文件</li><li>去除多余css(未被使用)，减少css大小，优化css结构，减少50%-80%的文件大小</li><li>自动校验js语法，并自动修复部分语法格式问题</li><li>支持iconfont字体文件</li><li>自动引入html5shiv、respond，兼容h5标签以及响应式</li></ol>
+
+<h2>下载依赖</h2>
+
+<p><code>
+  yarn add jay-webpack-scaffold
+</code></p>
+
+<h2>配置文件</h2>
+
+<p><code>
+  cp ./node_modules/jay-webpack-scaffold/webpack/config.dist.js ./webpack-config.js
+</code>
+根据需求调整相应目录</p>
+
+<h3>配置文件参数</h3>
+
+<p><code>
+  entry: 需要编译输出的js 根路径
+  output: 输出的路径
+  mainJs: 全局使用的js文件路径
+  lessPath: 需要编译输出的less 根路径，该目录下，都会被编译输出
+  publicPath: 开发环境下，使用路径
+  author: 作者名称
+  removePattern: 不需要被输出的文件路径 正则表达式，例如 /^\/css\/.*\.js?$/，表示css目录下的所有js文件都不输出
+  purifyCssPaths: 被使用到css的所有文件地址，如html页面和js，它会过滤除了这些被使用的css样式
+  copyLibs: 需要拷贝的类库
+</code></p>
+
+<h2>代码格式化配置</h2>
+
+<p> 你需要自己配置代码风格
+<code>
+  ./node_modules/.bin/eslint --init
+</code></p>
+
+<p>修复代码格式
+<code>
+./node_modules/.bin/eslint --fix filepath
+</code></p>
+
+<h2>开发说明</h2>
+
+<p>规范： 
+1. 默认加载全局的css和js文件，每个页面单独具有一个css文件和js文件
+2. 配置参数lessPath，该目录下的每个less文件都会默认编译输出成css文件，被每个页面使用
+3. 配置参数entry，目录下的index.js命名的文件将会作为编译输出
+4. 配置参数mainJs, 全局加载的js</p>
+
+<h2>命令(scripts)</h2>
+
+<p><code>
+  &quot;scripts&quot;: {
+    &quot;build&quot;: &quot;NODE_ENV=production settingPath=&#39;/webpack-config.js&#39; webpack --config    &#39;/node_modules/jay-webpack-scaffold/webpack/webpack.js&#39;&quot;,
+    &quot;dev&quot;: &quot;NODE_ENV=development settingPath=&#39;webpack-config.js&#39; webpack-dev-server --config &#39;/node_modules/jay-webpack-scaffold/webpack/webpack.js&#39;&quot;,
+  }
+</code></p>
+
+<p>你也可以这样使用
+webpack.config.js
+<code>
+const webpackConfig = require(&#39;jay-webpack-scaffold&#39;);
+module.exports = webpackConfig;
+// 可以自主配置loadeer，plugin，及其他参数
+</code>
+package.json
+<code>
+  &quot;scripts&quot;: {
+    &quot;build&quot;: &quot;NODE_ENV=production settingPath=&#39;/webpack-config.js&#39; webpack --config    &#39;webpack.config.js&#39;&quot;,
+    &quot;dev&quot;: &quot;NODE_ENV=development settingPath=&#39;webpack-config.js&#39; webpack-dev-server --config &#39;webpack.config.js&#39;&quot;,
+  }
+</code></p>
+
+<p>本地开发环境执行以下命令：
+<code>
+npm run dev
+</code>
+它将会文件生成好，放入内存中。自动监听文件变化
+&lt;br/&gt;</p>
+
+<p>生产环境执行以下命令：
+<code>
+npm run build
+</code>
+它将会生产静态资源文件到你定义的目录下</p>
+
+<h2>项目中使用</h2>
+
+<h3>ngixn配置</h3>
+
+<p><code>
+location ~ ^/dist {
+	if (-f $root_dir/dev.lock){
+      proxy_pass  http://127.0.0.1:8082;
+	}
+}
+</code>
+任何/dist/* 的请求，都会代理到http://127.0.0.1:8082，根据不同需求相应配置</p>
+
+<h2>异常情况</h2>
+
+<h3>npm run dev 执行报错</h3>
+
+<ol><li>有可能依赖没有下载完成，执行yarn</li><li>有可能端口被占用 执行以下命令
+<code>
+lsof -i:8082 （查看占用端口进程）
+kill -9 PID (pid 为进程id号)
+</code></li></ol>
+
+<h2>参与开发</h2>
+
+<ol><li>下载项目： git clone https://github.com/Jay-tian/webpack-scaffold.git</li><li>启动服务：进入项目根目录，执行 npm run dev</li><li>将会打开 http://127.0.0.1:8082/，资源文件在src下,修改代码将会时时生效</li><li>http://127.0.0.1:8082/webpack-dev-server, 该路径提供了编译输出的资源路径（资源不是实体文件）</li><li>欢迎提交merge request</li></ol>

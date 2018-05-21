@@ -15,6 +15,6 @@ lessEntries.forEach(function(f){
   entries[name] = f;
 });
 
-entries = Object.assign({}, {'js/app': config.mainJs}, entries);
+entries = Object.assign({}, {'js/app': [config.mainJs, 'jay-respond', 'html5shiv']}, entries);
 
 module.exports = entries;
