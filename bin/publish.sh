@@ -1,6 +1,7 @@
 #! /bin/bash
 npm run build;
-md2html 'README.md' > 'README.html';
+node bin/initIndex.js;
 git add -A;
 git commit -m "update";
 git push;
+npm publish;

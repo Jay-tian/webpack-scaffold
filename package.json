@@ -33,6 +33,7 @@
     "less": "^2.7.2",
     "less-loader": "^4.0.5",
     "markdown": "^0.5.0",
+    "marked": "^0.4.0",
     "mime": "^2.3.1",
     "mini-css-extract-plugin": "^0.4.0",
     "open": "^0.0.5",
@@ -59,7 +60,8 @@
     "dev": "NODE_ENV=development webpack-dev-server --config './webpack/webpack.js'",
     "fix": "eslint --fix",
     "test": "mocha --recursive --reporter mochawesome test && node test/show-result.js",
-    "test1": "mocha server-test"
+    "test1": "mocha server-test",
+    "init-index": "node bin/initIndex.js"
   },
   "name": "jay-webpack-scaffold",
   "description": "基于webpack4的前端多入口架构方案，multi entry packaging for front end based on Webpack4",
