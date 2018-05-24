@@ -7,14 +7,16 @@ const PurifyCSSPlugin = require('purifycss-webpack');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const removeWebpackPlugin = require('jay-remove-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const path = require('path');
+const tools = require('./tools.js');
 
 const getCopyPaths = function(list){
   let copyConfig = [];
   list.forEach(function(name) {
     copyConfig.push({
       from: path.join(config.rootPath + '/node_modules/', name),
-      to: path.join(config.output, '/js/libs/' + name),
+      to: path.join(config.output, '/js/libs/' + tools.dirname(name)),
       toType: 'dir',
       ignore: ['*.md', 'LICENSE', 'package.json', 'package-lock.json', 'gulpfile.js', 'composer.json', 'bower.json']
     });
@@ -64,10 +66,13 @@ let plugin = [
     filterPath: config.removePattern,
   }),
 ];
+
 if ('production' == config.env) {
   plugin.push(new CleanWebpackPlugin([config.output], {
     root: config.rootPath
   }));
+
+  // plugin.push(new BundleAnalyzerPlugin());
 }
 
 module.exports = plugin;

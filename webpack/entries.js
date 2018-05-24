@@ -4,6 +4,7 @@ const glob = require('glob');
 const fileRootPath = config.entry;
 let files = glob.sync(fileRootPath + '**/index.js');
 let lessEntries = glob.sync(config.lessPath + '**/*.less');
+files = files.concat(glob.sync(config.libs + '**/*.js'));
 
 let entries = {};
 files.forEach(function(f){

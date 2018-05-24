@@ -13,12 +13,16 @@ let setting = {
   lessPath: rootPath + '/src/client/less/pages',
   publicPath: '/public/',
   author: 'tianshengjie',
+  libs: rootPath + '/src/js/libs/',
   purifyCssPaths: purifyCssPaths,
   copyLibs: [
-    'validator', 
+    'validator/', 
     'swiper/dist',
     'jquery/dist'
   ],
+  alias: {
+    libs: rootPath + '/src/js/libs/',
+  },
 };
 
 module.exports = setting;

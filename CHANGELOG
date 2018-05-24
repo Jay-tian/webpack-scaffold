@@ -25,3 +25,9 @@
 2018-5-21
     1.1.6
     全局的js文件，自动引入 html5shiv，respond
+
+2018-5-24
+    1.1.7
+    添加resolve.alias 配置, 加快路径解析
+    添加libs参数，自由编写类库文件，可以对一些模块进行封装输出
+    CopyWebpackPlugin支持单个文件拷贝或目录拷贝

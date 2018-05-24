@@ -50,6 +50,7 @@
     "swiper": "^4.2.6",
     "url-loader": "^0.6.2",
     "webpack": "^4.8.1",
+    "webpack-bundle-analyzer": "^2.13.0",
     "webpack-dev-server": "^3.1.4"
   },
   "scripts": {
@@ -58,11 +59,11 @@
     "dev": "NODE_ENV=development webpack-dev-server --config './webpack/webpack.js'",
     "fix": "eslint --fix",
     "test": "mocha --recursive --reporter mochawesome test && node test/show-result.js",
-    "test1": "mocha server-test "
+    "test1": "mocha server-test"
   },
   "name": "jay-webpack-scaffold",
-  "description": "基于webpack4的前端多入口打包方案，multi entry packaging for front end based on Webpack4",
-  "version": "1.1.6",
+  "description": "基于webpack4的前端多入口架构方案，multi entry packaging for front end based on Webpack4",
+  "version": "1.1.7",
   "main": "./webpack/webpack.js",
   "directories": {
     "test": "tests"

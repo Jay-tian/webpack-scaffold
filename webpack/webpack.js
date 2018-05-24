@@ -6,6 +6,10 @@ const config = require('./config.js');
 let webpackConfig = {
   mode: config.env,
   entry: entries,
+  resolve: {
+    alias: config.alias,
+    extensions: ['*', '.js', '.jsx'],
+  },
   output: {
     path: config.output, 
     filename: '[name].js',
