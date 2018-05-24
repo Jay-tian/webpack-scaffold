@@ -15,7 +15,7 @@ let defaultSetting = {
   author: 'jay',
   rootPath: rootPath,
   env: env,
-  purifyCssPaths: glob.sync(path.join(rootPath, '/index.html')),
+  purifyCssPaths: glob.sync(path.join(rootPath, '/*.html')),
   copyLibs: [
     'validator', 
     'swiper/dist',
