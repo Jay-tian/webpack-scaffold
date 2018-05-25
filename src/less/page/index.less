@@ -1,11 +1,12 @@
-.header-bg{
-    background: url('../../image/1.jpg') no-repeat center center;
-    background-size: cover;
-    background-position-y: -16rem;
-    color: #fff;
-    height: 10rem;
-    line-height: 10rem;
+.header-bg {
+  background: url('../../image/1.jpg') no-repeat center center;
+  background-size: cover;
+  background-position-y: -16rem;
+  color: #fff;
+  height: 10rem;
+  line-height: 10rem;
 }
+
 html {
   font-size: 100%;
   overflow-y: scroll;
@@ -25,6 +26,16 @@ body {
 a {
   color: #0645ad;
   text-decoration: none;
+}
+
+a::-moz-selection {
+  background: rgba(255, 255, 0, 0.3);
+  color: #0645ad;
+}
+
+a::selection {
+  background: rgba(255, 255, 0, 0.3);
+  color: #0645ad;
 }
 
 a:visited {
@@ -58,22 +69,8 @@ a:active {
   color: #000;
 }
 
-a::-moz-selection {
-  background: rgba(255, 255, 0, 0.3);
-  color: #0645ad;
-}
-
-a::selection {
-  background: rgba(255, 255, 0, 0.3);
-  color: #0645ad;
-}
-
 p {
   margin: 1em 0;
-}
-
-img {
-  max-width: 100%;
 }
 
 h1,
@@ -118,7 +115,7 @@ h6 {
 }
 
 blockquote {
-  color: #666666;
+  color: #666;
   margin: 0;
   padding-left: 3em;
   border-left: 0.5em #eee solid;
@@ -138,7 +135,7 @@ code,
 kbd,
 samp {
   color: #000;
-  font-family: monospace, monospace;
+  font-family: monospace;
   _font-family: 'courier new', monospace;
   font-size: 0.98em;
 }
@@ -147,7 +144,7 @@ pre {
   white-space: pre;
   white-space: pre-wrap;
   word-wrap: break-word;
-  background: #F6F6F6;
+  background: #f6f6f6;
   padding: 20px;
   margin: 15px 0;
 }
@@ -205,6 +202,7 @@ dd {
 }
 
 img {
+  max-width: 100%;
   border: 0;
   -ms-interpolation-mode: bicubic;
   vertical-align: middle;
@@ -255,17 +253,17 @@ td {
     border-bottom: 1px solid black;
   }
 
-  a[href]:after {
+  a[href]::after {
     content: " (" attr(href) ")";
   }
 
-  abbr[title]:after {
+  abbr[title]::after {
     content: " (" attr(title) ")";
   }
 
-  .ir a:after,
-  a[href^="javascript:"]:after,
-  a[href^="#"]:after {
+  .ir a::after,
+  a[href^="javascript:"]::after,
+  a[href^="#"]::after {
     content: "";
   }
 

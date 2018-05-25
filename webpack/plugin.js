@@ -7,9 +7,10 @@ const PurifyCSSPlugin = require('purifycss-webpack');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const removeWebpackPlugin = require('jay-remove-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const path = require('path');
 const tools = require('./tools.js');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 const getCopyPaths = function(list){
   let copyConfig = [];
@@ -64,6 +65,9 @@ let plugin = [
   }),
   new removeWebpackPlugin({
     filterPath: config.removePattern,
+  }),
+  new StyleLintPlugin({
+    files: '**/*.(less|css|sass)',
   }),
 ];
 

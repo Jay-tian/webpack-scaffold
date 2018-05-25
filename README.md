@@ -1,13 +1,17 @@
-## 基于webpack4
+# 基于webpack4
+
+## 关于前端工程化
+前端野蛮生长的时代已经过去了。随着前端的发展，越来越复杂的业务，各种各样的插件模块依赖关系，项目复杂度的提升，开发成本越来越高。webpack就是解决了这一系列的问题。你可以利用webpack管理各种资源，也可以提前享受es6语法的便利，也可以规范成员之间的开发规范，等等。
 
 ## 功能列表
 1. 模块化管理资源文件，解析编译ES6语法
-2. 编译less文件，自动添加浏览器前缀
-3. 压缩js,css文件
-4. 使用PurifyCSS、OptimizeCssAssets，去除多余css(未被使用)，减少css大小，优化css结构，减少50%-80%的文件大小
-5. 使用jslint，自动校验js语法，并自动修复部分语法格式问题
-6. 支持iconfont字体文件
-7. 自动引入html5shiv、respond，兼容h5标签以及响应式
+2. 使用jslint，强制校验js语法，规范js书写规则，并自动修复部分语法格式问题
+3. 使用styleLint，强制校验css,less语法，规范书写css,less规则
+4. 编译less文件，自动添加浏览器前缀
+5. 压缩js,css文件
+6. 使用PurifyCSS、OptimizeCssAssets，去除多余css(未被使用)，减少css大小，优化css结构，减少50%-80%的文件大小
+7. 支持iconfont字体文件
+8. 自动引入html5shiv、respond，兼容h5标签以及响应式
 
 ## 下载依赖
 ```
@@ -37,15 +41,25 @@
 
 ## 代码格式化配置
 
- 你需要自己配置代码风格
+### 配置js代码风格
 ```
   ./node_modules/.bin/eslint --init
 ```
-
-修复代码格式
+修复js代码格式
 ```
 ./node_modules/.bin/eslint --fix filepath
 ```
+规则列表：https://eslint.org/docs/rules/
+
+### 配置样式代码风格
+项目根目录 .stylelintrc
+```
+{
+    "extends": "stylelint-config-standard"
+}
+```
+忽略文件配置 .stylelintignore
+规则列表：https://stylelint.io/user-guide/rules/
 
 ## 开发说明
 规范： 

@@ -17,8 +17,8 @@ let defaultSetting = {
   env: env,
   purifyCssPaths: glob.sync(path.join(rootPath, '/*.html')),
   copyLibs: [
-    'validator', 
-    'swiper/dist',
+    'validator/', 
+    'swiper/dist/',
     'jquery/dist/jquery.min.js'
   ],
   libs: rootPath + '/src/js/libs/',

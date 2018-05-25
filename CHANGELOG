@@ -31,3 +31,7 @@
     添加resolve.alias 配置, 加快路径解析
     添加libs参数，自由编写类库文件，可以对一些模块进行封装输出
     CopyWebpackPlugin支持单个文件拷贝或目录拷贝
+
+2018-5-25
+    1.1.8
+    增加stylelint，规范less，css书写规范
