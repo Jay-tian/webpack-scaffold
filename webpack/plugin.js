@@ -12,6 +12,9 @@ const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const path = require('path');
 const tools = require('./tools.js');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
+const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin');
+const HappyPack = require('happypack');
+const happyThreadPool = HappyPack.ThreadPool({ size: 5 });
 
 const getCopyPaths = function(list){
   let copyConfig = [];
@@ -29,6 +32,39 @@ const getCopyPaths = function(list){
 
 let plugin = [
   new webpack.BannerPlugin(config.author),
+  new HappyPack({
+    id: 'js',
+    threadPool: happyThreadPool,
+    loaders: [{
+      loader: 'babel-loader',
+      query: {
+        cacheDirectory: true,
+        presets: ['es2015'],
+        plugins: ['transform-runtime']
+      }
+    }]
+  }),
+  new HappyPack({
+    id: 'less',
+    threadPool: happyThreadPool,
+    loaders: [{
+      loader: 'less-loader',
+    }]
+  }),
+  new HappyPack({
+    id: 'css',
+    threadPool: happyThreadPool,
+    loaders: [{
+      loader: 'css-loader',
+    }]
+  }),
+  new HappyPack({
+    id: 'style',
+    threadPool: happyThreadPool,
+    loaders: [{
+      loader: 'style-loader',
+    }]
+  }),
   new ExtractTextPlugin({
     filename:  (getPath) => {
       return getPath('[name].css').replace('js', 'css');
@@ -64,14 +100,14 @@ let plugin = [
     cssProcessorOptions: { discardComments: { removeAll: true } },
     canPrint: true
   }),
-  new removeWebpackPlugin({
-    filterPath: config.removePattern,
-  }),
   new StyleLintPlugin({
     context: config.lessPath,
     files: '**/*.(less|css|sass)',
   }),
   new ProgressBarPlugin(),
+  new removeWebpackPlugin({
+    filterPath: config.removePattern,
+  }),
 ];
 
 if ('production' == config.env) {
@@ -79,6 +115,18 @@ if ('production' == config.env) {
     root: config.rootPath
   }));
 
+  plugin.push(new ParallelUglifyPlugin({
+    cacheDir: path.join(config.rootPath,'webpack-cache'),
+    workerCount: 5,
+    uglifyJS:{
+      output: {
+        comments: false
+      },
+      compress: {
+        warnings: false
+      }
+    }
+  }));
   // plugin.push(new BundleAnalyzerPlugin());
 }
 

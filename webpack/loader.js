@@ -4,17 +4,17 @@ const config = require('./config.js');
 let loader = [
   {
     test: /\.css$/,
-    loader: ExtractTextPlugin.extract({fallback: 'style-loader', use: [
+    loader: ExtractTextPlugin.extract({fallback: 'happypack/loader?id=style', use: [
       {
-        loader: 'css-loader'
+        loader: 'happypack/loader?id=css'
       },     
     ]})
   },
   {
     test: /\.less$/,
-    loader: ExtractTextPlugin.extract({fallback: 'style-loader', use: [
+    loader: ExtractTextPlugin.extract({fallback: 'happypack/loader?id=style', use: [
       {
-        loader: 'css-loader'
+        loader: 'happypack/loader?id=css'
       },
       {
         loader: 'postcss-loader',
@@ -27,19 +27,14 @@ let loader = [
         },
       },
       {
-        loader: 'less-loader'
+        loader: 'happypack/loader?id=less'
       }
     ]})
   },
   {
     test: /\.js?$/,
     include: config.entry,
-    loader: 'babel-loader',
-    query: {
-      cacheDirectory: true,
-      presets: ['es2015'],
-      plugins: ['transform-runtime']
-    }
+    loader: 'happypack/loader?id=js',
   },
   {  
     test:/\.(woff)|(svg)|(eot)|(ttf)/,  
