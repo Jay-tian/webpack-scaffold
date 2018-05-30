@@ -16,7 +16,7 @@
         <link href="dist/css/page/index.css" rel="stylesheet" />
     </head>
     <body class="">
-        <h1 class="text-center header-bg">
+        <h1 class="text-center header-bg"  style="background-image:url('dist/image/c5814647cf.jpg')">
             <span>
                 Webpack-Scaffold    
             <span>
