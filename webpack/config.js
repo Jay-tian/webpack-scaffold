@@ -23,7 +23,7 @@ let defaultSetting = {
   ],
   serverPort: 8082,
   libs: rootPath + '/src/js/libs/',
-  removePattern: /^\/css\/.*\.js?$/,
+  removePattern: /^css\/.*\.js?$/,
   mainJs: rootPath + '/src/js/app.js',
   lessPath: rootPath + '/src/less/',
 };
