@@ -5,7 +5,7 @@ const config = require('./config.js');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const PurifyCSSPlugin = require('purifycss-webpack');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const removeWebpackPlugin = require('jay-remove-webpack-plugin');
+const RemoveWebpackPlugin = require('jay-remove-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
@@ -14,7 +14,7 @@ const tools = require('./tools.js');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin');
 const HappyPack = require('happypack');
-const happyThreadPool = HappyPack.ThreadPool({ size: 5 });
+const happyThreadPool = HappyPack.ThreadPool({ size: 10 });
 
 const getCopyPaths = function(list){
   let copyConfig = [];
@@ -65,6 +65,7 @@ let plugin = [
       loader: 'style-loader',
     }]
   }),
+  new webpack.optimize.ModuleConcatenationPlugin(),
   new ExtractTextPlugin({
     filename:  (getPath) => {
       return getPath('[name].css').replace('js', 'css');
@@ -105,7 +106,7 @@ let plugin = [
     files: '**/*.(less|css|sass)',
   }),
   new ProgressBarPlugin(),
-  new removeWebpackPlugin({
+  new RemoveWebpackPlugin({
     filterPath: config.removePattern,
   }),
 ];

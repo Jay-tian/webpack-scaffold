@@ -45,3 +45,4 @@
 2018-5-30
     1.1.10
     新增：HappyPack,webpack-parallel-uglify-plugin,多进程任务，加快打包进度
+    新增：ModuleConcatenationPlugin, 优化打包速度
