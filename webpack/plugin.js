@@ -8,6 +8,7 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const removeWebpackPlugin = require('jay-remove-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const path = require('path');
 const tools = require('./tools.js');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
@@ -67,8 +68,10 @@ let plugin = [
     filterPath: config.removePattern,
   }),
   new StyleLintPlugin({
+    context: config.lessPath,
     files: '**/*.(less|css|sass)',
   }),
+  new ProgressBarPlugin(),
 ];
 
 if ('production' == config.env) {

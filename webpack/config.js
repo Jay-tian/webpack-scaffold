@@ -21,6 +21,7 @@ let defaultSetting = {
     'swiper/dist/',
     'jquery/dist/jquery.min.js'
   ],
+  serverPort: 8082,
   libs: rootPath + '/src/js/libs/',
   removePattern: /^\/css\/.*\.js?$/,
   mainJs: rootPath + '/src/js/app.js',
