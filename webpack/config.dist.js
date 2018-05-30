@@ -15,6 +15,7 @@ let setting = {
   author: 'tianshengjie',
   libs: rootPath + '/src/js/libs/',
   purifyCssPaths: purifyCssPaths,
+  serverPort: 8082,
   copyLibs: [
     'validator/', 
     'swiper/dist',
