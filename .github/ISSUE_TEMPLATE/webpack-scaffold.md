@@ -1,0 +1,167 @@
+---
+name: webpack-scaffold
+about: webpack4 webpack-dev-server
+
+---
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
+        <meta name="renderer" content="webkit">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+        <meta name="keywords" content="webpack es6 前端方案 less ">
+        <meta name="description" content="最简单的前端方案脚手架">
+        <meta charset="UTF-8" />
+        <title>
+              最简单的前端方案脚手架
+        </title>
+    </head>
+    <body class="">
+        <h1 class="text-center header-bg">
+            <span>
+                Webpack-Scaffold    
+            <span>
+        </h1>
+        <div class="container" id="main">
+            <div class="row">
+                <div class="col-md-4">
+                    <pre>2018-5-11
+    1.1.0
+    升级：到webpack4
+
+2018-5-11
+    1.1.1
+    修复：lib copy 路径问题
+
+2018-5-13
+    1.1.2
+    修复：解决入口文件是less文件时，额外产生js文件的问题
+
+2018-5-13
+    1.1.3
+    新增：开发环境，webpack-dev-server
+
+2018-5-17
+    1.1.4
+    新增：lean插件，build前删除原有静态文件
+
+2018-5-17 
+    1.1.5
+    修复：了开发环境下，某些资源丢失的情况
+
+2018-5-21
+    1.1.6
+    新增：全局的js文件，自动引入 html5shiv，respond
+
+2018-5-24
+    1.1.7
+    新增：resolve.alias 配置, 加快路径解析
+    新增：libs参数，自由编写类库文件，可以对一些模块进行封装输出
+    新增：CopyWebpackPlugin支持单个文件拷贝或目录拷贝
+
+2018-5-25
+    1.1.8
+    新增：stylelint，规范less，css书写规范
+
+2018-5-30
+    1.1.9
+    新增：打包进度，ProgressBarPlugin
+    修复：style格式校验路径问题
+    新增：自定义端口</pre>
+                </div>
+                <div class="col-md-8">
+                    <h1 id="-webpack4">基于webpack4</h1>
+<h2 id="-">关于前端工程化</h2>
+<p>前端野蛮生长的时代已经过去了。随着前端的发展，越来越复杂的业务，各种各样的插件模块依赖关系，项目复杂度的提升，开发成本越来越高。webpack就是解决了这一系列的问题。你可以利用webpack管理各种资源，也可以提前享受es6语法的便利，也可以规范成员之间的开发规范，等等。</p>
+<h2 id="-">功能列表</h2>
+<ol>
+<li>模块化管理资源文件，解析编译ES6语法</li>
+<li>使用jslint，强制校验js语法，规范js书写规则，并自动修复部分语法格式问题</li>
+<li>使用styleLint，强制校验css,less语法，规范书写css,less规则</li>
+<li>编译less文件，自动添加浏览器前缀</li>
+<li>压缩js,css文件</li>
+<li>使用PurifyCSS、OptimizeCssAssets，去除多余css(未被使用)，减少css大小，优化css结构，减少50%-80%的文件大小</li>
+<li>支持iconfont字体文件</li>
+<li>自动引入html5shiv、respond，兼容h5标签以及响应式</li>
+</ol>
+<h2 id="-">下载依赖</h2>
+<pre><code>  yarn add jay-webpack-scaffold</code></pre><h2 id="-">配置文件</h2>
+<pre><code>  cp ./node_modules/jay-webpack-scaffold/webpack/config.dist.js ./webpack-config.js</code></pre><p>根据需求调整相应目录</p>
+<h3 id="-">配置文件参数</h3>
+<pre><code>  entry: 需要编译输出的js 根路径
+  output: 输出的路径
+  mainJs: 全局使用的js文件路径
+  lessPath: 需要编译输出的less 根路径，该目录下，都会被编译输出
+  publicPath: 开发环境下，使用路径
+  author: 作者名称
+  removePattern: 不需要被输出的文件路径 正则表达式，例如 /^\/css\/.*\.js?$/，表示css目录下的所有js文件都不输出（当less作为入口文件时，会输出js文件）
+  purifyCssPaths: 被使用到css的所有文件地址，如html页面和js，它会过滤除了这些被使用的css样式
+  copyLibs: 需要拷贝的类库，可以拷贝目录，也可以拷贝单独文件
+  alias: 引用别名，加快编译速度
+  libs: js类库目录，每个文件都会单独输出，可以对已有的类库模块封装输出</code></pre><h2 id="-">代码格式化配置</h2>
+<h3 id="-js-">配置js代码风格</h3>
+<pre><code>  ./node_modules/.bin/eslint --init</code></pre><p>修复js代码格式</p>
+<pre><code>./node_modules/.bin/eslint --fix filepath</code></pre><p>规则列表：<a href="https://eslint.org/docs/rules/">https://eslint.org/docs/rules/</a></p>
+<h3 id="-">配置样式代码风格</h3>
+<p>项目根目录 .stylelintrc</p>
+<pre><code>{
+    &quot;extends&quot;: &quot;stylelint-config-standard&quot;
+}</code></pre><p>忽略文件配置 .stylelintignore
+规则列表：<a href="https://stylelint.io/user-guide/rules/">https://stylelint.io/user-guide/rules/</a></p>
+<h2 id="-">开发说明</h2>
+<p>规范： </p>
+<ol>
+<li>默认加载全局的css和js文件，每个页面单独具有一个css文件和js文件</li>
+<li>配置参数lessPath，该目录下的每个less文件都会默认编译输出成css文件，被每个页面使用</li>
+<li>配置参数entry，目录下的index.js命名的文件将会作为编译输出</li>
+<li>配置参数mainJs, 全局加载的js</li>
+</ol>
+<h2 id="-scripts-">命令(scripts)</h2>
+<pre><code>  &quot;scripts&quot;: {
+    &quot;build&quot;: &quot;NODE_ENV=production settingPath=&#39;/webpack-config.js&#39; webpack --config    &#39;/node_modules/jay-webpack-scaffold/webpack/webpack.js&#39;&quot;,
+    &quot;dev&quot;: &quot;NODE_ENV=development settingPath=&#39;webpack-config.js&#39; webpack-dev-server --config &#39;/node_modules/jay-webpack-scaffold/webpack/webpack.js&#39;&quot;,
+  }</code></pre><p>你也可以这样使用
+webpack.config.js</p>
+<pre><code>const webpackConfig = require(&#39;jay-webpack-scaffold&#39;);
+module.exports = webpackConfig;
+// 可以自主配置loadeer，plugin，及其他参数</code></pre><p>package.json</p>
+<pre><code>  &quot;scripts&quot;: {
+    &quot;build&quot;: &quot;NODE_ENV=production settingPath=&#39;/webpack-config.js&#39; webpack --config    &#39;webpack.config.js&#39;&quot;,
+    &quot;dev&quot;: &quot;NODE_ENV=development settingPath=&#39;webpack-config.js&#39; webpack-dev-server --config &#39;webpack.config.js&#39;&quot;,
+  }</code></pre><p>本地开发环境执行以下命令：</p>
+<pre><code>npm run dev</code></pre><p>它将会文件生成好，放入内存中。自动监听文件变化
+<br/></p>
+<p>生产环境执行以下命令：</p>
+<pre><code>npm run build</code></pre><p>它将会生产静态资源文件到你定义的目录下</p>
+<h2 id="-">项目中使用</h2>
+<h3 id="ngixn-">ngixn配置</h3>
+<pre><code>location ~ ^/dist {
+    if (-f $root_dir/dev.lock){
+      proxy_pass  http://127.0.0.1:8082;
+    }
+}</code></pre><p>任何/dist/* 的请求，都会代理到<a href="http://127.0.0.1:8082%EF%BC%8C%E6%A0%B9%E6%8D%AE%E4%B8%8D%E5%90%8C%E9%9C%80%E6%B1%82%E7%9B%B8%E5%BA%94%E9%85%8D%E7%BD%AE">http://127.0.0.1:8082，根据不同需求相应配置</a></p>
+<h2 id="-">异常情况</h2>
+<h3 id="npm-run-dev-">npm run dev 执行报错</h3>
+<ol>
+<li>有可能依赖没有下载完成，执行yarn</li>
+<li>有可能端口被占用 执行以下命令<pre><code>lsof -i:8082 （查看占用端口进程）
+kill -9 PID (pid 为进程id号)</code></pre></li>
+</ol>
+<h2 id="-">参与开发</h2>
+<ol>
+<li>下载项目： git clone <a href="https://github.com/Jay-tian/webpack-scaffold.git">https://github.com/Jay-tian/webpack-scaffold.git</a></li>
+<li>启动服务：进入项目根目录，执行 npm run dev</li>
+<li>将会打开 <a href="http://127.0.0.1:8082/%EF%BC%8C%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6%E5%9C%A8src%E4%B8%8B,%E4%BF%AE%E6%94%B9%E4%BB%A3%E7%A0%81%E5%B0%86%E4%BC%9A%E6%97%B6%E6%97%B6%E7%94%9F%E6%95%88">http://127.0.0.1:8082/，资源文件在src下,修改代码将会时时生效</a></li>
+<li><a href="http://127.0.0.1:8082/webpack-dev-server">http://127.0.0.1:8082/webpack-dev-server</a>, 该路径提供了编译输出的资源路径（资源不是实体文件）</li>
+<li>欢迎提交merge request</li>
+<li>QQ：806338233 </li>
+</ol>
+
+                </div>
+            </div>
+           
+        </div>
+    </body>
+</html>
