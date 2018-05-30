@@ -22,7 +22,15 @@
             <span>
         </h1>
         <div class="container" id="main">
-            {{content}}
+            <div class="row">
+                <div class="col-md-4">
+                    <pre>{{changelog}}</pre>
+                </div>
+                <div class="col-md-8">
+                    {{content}}
+                </div>
+            </div>
+           
         </div>
         <script src="dist/js/libs/jquery/dist/jquery.min.js"></script>
         <script src="dist/js/app.js"></script>

@@ -19,8 +19,7 @@ let webpackConfig = {
     // 设置服务器访问的基本目录
     contentBase: config.rootPath, //最好设置成绝对路径
     host:'127.0.0.1',
-    port: 8082,
-    open: true
+    port: config.serverPort,
   },
   externals: {
     jquery: 'jQuery',
