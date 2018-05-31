@@ -1,5 +1,2 @@
 1. 文件hash引用
-2. HappyPack
-3. ParallelUglifyPlugin
-4. ModuleConcatenationPlugin,Scope Hoisting 
-5. Prepack
+5. prepack-webpack-plugin

@@ -17,9 +17,11 @@
     </head>
     <body class="">
         <h1 class="text-center header-bg">
-            <span>
-                Webpack-Scaffold    
-            <span>
+          <el-row :gutter="10">
+            <el-col :xl="24">
+              {{ message }}
+            </el-col>
+          </el-row>
         </h1>
         <div class="container" id="main">
             <div class="row">
@@ -66,7 +68,13 @@
     1.1.9
     新增：打包进度，ProgressBarPlugin
     修复：style格式校验路径问题
-    新增：自定义端口</pre>
+    新增：自定义端口
+
+2018-5-30
+    1.1.10
+    新增：HappyPack,webpack-parallel-uglify-plugin,多进程任务，加快打包进度
+    新增：ModuleConcatenationPlugin, 优化打包速度
+    新增：vue组件，Element组件</pre>
                 </div>
                 <div class="col-md-8">
                     <h1 id="-webpack4">基于webpack4</h1>
@@ -82,6 +90,7 @@
 <li>使用PurifyCSS、OptimizeCssAssets，去除多余css(未被使用)，减少css大小，优化css结构，减少50%-80%的文件大小</li>
 <li>支持iconfont字体文件</li>
 <li>自动引入html5shiv、respond，兼容h5标签以及响应式</li>
+<li>集成vue库和element组件库</li>
 </ol>
 <h2 id="-">下载依赖</h2>
 <pre><code>  yarn add jay-webpack-scaffold</code></pre><h2 id="-">配置文件</h2>
@@ -97,7 +106,8 @@
   purifyCssPaths: 被使用到css的所有文件地址，如html页面和js，它会过滤除了这些被使用的css样式
   copyLibs: 需要拷贝的类库，可以拷贝目录，也可以拷贝单独文件
   alias: 引用别名，加快编译速度
-  libs: js类库目录，每个文件都会单独输出，可以对已有的类库模块封装输出</code></pre><h2 id="-">代码格式化配置</h2>
+  libs: js类库目录，每个文件都会单独输出，可以对已有的类库模块封装输出
+  serverPort: 服务端口</code></pre><h2 id="-">代码格式化配置</h2>
 <h3 id="-js-">配置js代码风格</h3>
 <pre><code>  ./node_modules/.bin/eslint --init</code></pre><p>修复js代码格式</p>
 <pre><code>./node_modules/.bin/eslint --fix filepath</code></pre><p>规则列表：<a href="https://eslint.org/docs/rules/">https://eslint.org/docs/rules/</a></p>
@@ -114,6 +124,7 @@
 <li>配置参数lessPath，该目录下的每个less文件都会默认编译输出成css文件，被每个页面使用</li>
 <li>配置参数entry，目录下的index.js命名的文件将会作为编译输出</li>
 <li>配置参数mainJs, 全局加载的js</li>
+<li>由于PurifyCSS（过滤html和js中未被使用到的样式）过滤了未被使用的css样式，导致在页面中使用新的样式不生效（因为webpack没有监听html文件的变化，这时你需要重启服务）</li>
 </ol>
 <h2 id="-scripts-">命令(scripts)</h2>
 <pre><code>  &quot;scripts&quot;: {
