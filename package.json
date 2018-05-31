@@ -73,7 +73,7 @@
   },
   "name": "jay-webpack-scaffold",
   "description": "基于webpack4的前端多入口架构方案，multi entry packaging for front end based on Webpack4",
-  "version": "1.1.9",
+  "version": "1.1.10",
   "main": "./webpack/webpack.js",
   "directories": {
     "test": "tests"
@@ -97,7 +97,9 @@
     "eslint",
     "icon-font",
     "PurifyCSS",
-    "多入口"
+    "多入口",
+    "vue",
+    "element"
   ],
   "devDependencies": {
     "chai": "^4.1.2",
