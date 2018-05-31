@@ -17,9 +17,11 @@
     </head>
     <body class="">
         <h1 class="text-center header-bg"  style="background-image:url('dist/image/c5814647cf.jpg')">
-            <span>
-                Webpack-Scaffold    
-            <span>
+          <el-row :gutter="10">
+            <el-col :xl="24">
+              {{ message }}
+            </el-col>
+          </el-row>
         </h1>
         <div class="container" id="main">
             <div class="row">
