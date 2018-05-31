@@ -12,6 +12,7 @@
 6. 使用PurifyCSS、OptimizeCssAssets，去除多余css(未被使用)，减少css大小，优化css结构，减少50%-80%的文件大小
 7. 支持iconfont字体文件
 8. 自动引入html5shiv、respond，兼容h5标签以及响应式
+9. 集成vue库和element组件库
 
 ## 下载依赖
 ```
@@ -68,6 +69,7 @@
 2. 配置参数lessPath，该目录下的每个less文件都会默认编译输出成css文件，被每个页面使用
 3. 配置参数entry，目录下的index.js命名的文件将会作为编译输出
 4. 配置参数mainJs, 全局加载的js
+5. 由于PurifyCSS（过滤html和js中未被使用到的样式）过滤了未被使用的css样式，导致在页面中使用新的样式不生效（因为webpack没有监听html文件的变化，这时你需要重启服务）
 
 ## 命令(scripts)
 ```
