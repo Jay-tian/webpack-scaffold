@@ -17,8 +17,6 @@ let defaultSetting = {
   env: env,
   purifyCssPaths: glob.sync(path.join(rootPath, '/*.html')),
   copyLibs: [
-    'validator/', 
-    'swiper/dist/',
     'jquery/dist/jquery.min.js'
   ],
   serverPort: 8082,
