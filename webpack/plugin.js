@@ -93,9 +93,6 @@ let plugin = [
     }
   }),
   new CopyWebpackPlugin(getCopyPaths(config.copyLibs)),
-  new PurifyCSSPlugin({
-    paths: config.purifyCssPaths,
-  }),
   new OptimizeCssAssetsPlugin({
     cssProcessor: require('cssnano'),
     cssProcessorOptions: { discardComments: { removeAll: true } },
@@ -127,6 +124,10 @@ if ('production' == config.env) {
         warnings: false
       }
     }
+  }));
+
+  plugin.push(new PurifyCSSPlugin({
+    paths: config.purifyCssPaths,
   }));
   // plugin.push(new BundleAnalyzerPlugin());
 }
