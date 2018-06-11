@@ -43,7 +43,7 @@ let loader = [
         loader: 'file-loader',
         options: {  
           name:'[hash:4]',  
-          outputPath:'iconfont/'  
+          outputPath:'iconfont/'
         }  
       }  
     ]  
@@ -52,7 +52,9 @@ let loader = [
     test:/\.(png)|(jpg)|(gif)$/i,  
     loader: 'file-loader',
     query: {
-      name: 'image/[hash:10].[ext]',
+      name: '[hash:10].[ext]',
+      outputPath:'image/',
+      publicPath: config.publicPath,
     }
   },
   {

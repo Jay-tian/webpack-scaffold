@@ -15,6 +15,8 @@ const StyleLintPlugin = require('stylelint-webpack-plugin');
 const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin');
 const HappyPack = require('happypack');
 const happyThreadPool = HappyPack.ThreadPool({ size: 10 });
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
+const process = require('process');
 
 const getCopyPaths = function(list){
   let copyConfig = [];
@@ -129,6 +131,17 @@ if ('production' == config.env) {
   plugin.push(new PurifyCSSPlugin({
     paths: config.purifyCssPaths,
   }));
+
+  plugin.push(new ImageminPlugin({
+    test: /\.(jpe?g|png|gif|svg)$/i,
+    pngquant: {
+      quality: '95-100',
+    },
+    optipng: {
+      optimizationLevel: 8
+    }
+  }));
+
   // plugin.push(new BundleAnalyzerPlugin());
 }
 

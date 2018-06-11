@@ -1,2 +1,4 @@
 1. 文件hash引用
-5. prepack-webpack-plugin
+2. prepack-webpack-plugin
+3. babel-preset-env babel-preset-latest
+4. imagemin-webpack-plugin
