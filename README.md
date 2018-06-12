@@ -1,5 +1,11 @@
 # 基于webpack4
 
+# 快速使用
+```
+    yarn global add webpack-scaffold-cli;
+    jay-webpack init <project-name>;
+```
+
 ## 关于前端工程化
 前端野蛮生长的时代已经过去了。随着前端的发展，越来越复杂的业务，各种各样的插件模块依赖关系，项目复杂度的提升，开发成本越来越高。webpack就是解决了这一系列的问题。你可以利用webpack管理各种资源，也可以提前享受es6语法的便利，也可以规范成员之间的开发规范，等等。
 

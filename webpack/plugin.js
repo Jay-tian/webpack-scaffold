@@ -16,7 +16,6 @@ const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin');
 const HappyPack = require('happypack');
 const happyThreadPool = HappyPack.ThreadPool({ size: 10 });
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
-const process = require('process');
 
 const getCopyPaths = function(list){
   let copyConfig = [];
@@ -138,7 +137,7 @@ if ('production' == config.env) {
       quality: '95-100',
     },
     optipng: {
-      optimizationLevel: 8
+      optimizationLevel: 5
     }
   }));
 
