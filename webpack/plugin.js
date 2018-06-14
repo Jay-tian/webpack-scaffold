@@ -34,9 +34,7 @@ let plugin = [
   new webpack.BannerPlugin(config.author),
   new webpack.optimize.ModuleConcatenationPlugin(),
   new ExtractTextPlugin({
-    filename:  (getPath) => {
-      return getPath('[name].css').replace('js', 'css');
-    },
+    filename: '[name].[chunkhash:8].css',
     allChunks: true
   }),
   new webpack.optimize.SplitChunksPlugin({

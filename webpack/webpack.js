@@ -12,7 +12,7 @@ let webpackConfig = {
   },
   output: {
     path: config.output, 
-    filename: '[name].js',
+    filename: '[name].[contenthash].js',
     publicPath: config.publicPath,
   },
   devServer: {
