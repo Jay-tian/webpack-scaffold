@@ -13,9 +13,8 @@ const path = require('path');
 const tools = require('./tools.js');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin');
-const HappyPack = require('happypack');
-const happyThreadPool = HappyPack.ThreadPool({ size: 10 });
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
+const happypack = require('./happypack.js');
 
 const getCopyPaths = function(list){
   let copyConfig = [];
@@ -33,39 +32,6 @@ const getCopyPaths = function(list){
 
 let plugin = [
   new webpack.BannerPlugin(config.author),
-  new HappyPack({
-    id: 'js',
-    threadPool: happyThreadPool,
-    loaders: [{
-      loader: 'babel-loader',
-      query: {
-        cacheDirectory: true,
-        presets: ['es2015'],
-        plugins: ['transform-runtime']
-      }
-    }]
-  }),
-  new HappyPack({
-    id: 'less',
-    threadPool: happyThreadPool,
-    loaders: [{
-      loader: 'less-loader',
-    }]
-  }),
-  new HappyPack({
-    id: 'css',
-    threadPool: happyThreadPool,
-    loaders: [{
-      loader: 'css-loader',
-    }]
-  }),
-  new HappyPack({
-    id: 'style',
-    threadPool: happyThreadPool,
-    loaders: [{
-      loader: 'style-loader',
-    }]
-  }),
   new webpack.optimize.ModuleConcatenationPlugin(),
   new ExtractTextPlugin({
     filename:  (getPath) => {
@@ -108,6 +74,7 @@ let plugin = [
     filterPath: config.removePattern,
   }),
 ];
+plugin = plugin.concat(happypack);
 
 if ('production' == config.env) {
   plugin.push(new CleanWebpackPlugin([config.output], {
