@@ -17,8 +17,6 @@ let defaultSetting = {
   env: env,
   purifyCssPaths: glob.sync(path.join(rootPath, '/*.html')),
   copyLibs: [
-    'validator/', 
-    'swiper/dist/',
     'jquery/dist/jquery.min.js'
   ],
   serverPort: 8082,
@@ -26,6 +24,8 @@ let defaultSetting = {
   removePattern: /^css\/.*\.js?$/,
   mainJs: rootPath + '/src/js/app.js',
   lessPath: rootPath + '/src/less/',
+  assetName: 'webpack.assets.js',
+  assetJs: true,
 };
 
 let settingPath = rootPath + process.env.settingPath;

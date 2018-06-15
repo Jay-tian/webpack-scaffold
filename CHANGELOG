@@ -47,3 +47,13 @@
     新增：HappyPack,webpack-parallel-uglify-plugin,多进程任务，加快打包进度
     新增：ModuleConcatenationPlugin, 优化打包速度
     新增：vue组件，Element组件
+
+2018-6-04
+    1.1.11
+    优化：更新依赖
+
+2018-6-15
+    1.1.12
+    优化： 使用hash更新资源缓存
+    新增： assets-webpack-plugin
+    优化：extract-text-webpack-plugin change to mini-css-extract-plugin

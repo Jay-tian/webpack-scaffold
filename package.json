@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "assets-webpack-plugin": "^3.7.1",
     "autoprefixer": "^7.2.5",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
@@ -14,6 +15,7 @@
     "clean-webpack-plugin": "^0.1.19",
     "copy-webpack-plugin": "^4.5.1",
     "cross-env": "^5.1.3",
+    "css-hot-loader": "^1.3.9",
     "css-loader": "^0.28.7",
     "editor.md": "^1.5.0",
     "element-ui": "^2.4.0",
@@ -27,6 +29,7 @@
     "glob": "^7.1.2",
     "happypack": "^5.0.0",
     "html5shiv": "^3.7.3",
+    "imagemin-webpack-plugin": "^2.1.5",
     "jay-remove-webpack-plugin": "^1.0.0",
     "jay-respond": "^1.4.3",
     "jquery": "^3.3.1",
@@ -73,7 +76,7 @@
   },
   "name": "jay-webpack-scaffold",
   "description": "基于webpack4的前端多入口架构方案，multi entry packaging for front end based on Webpack4",
-  "version": "1.1.10",
+  "version": "1.1.12",
   "main": "./webpack/webpack.js",
   "directories": {
     "test": "tests"
@@ -105,6 +108,6 @@
     "chai": "^4.1.2",
     "mocha": "^5.0.4",
     "mochawesome": "^3.0.2",
-    "webpack-cli": "^2.1.3"
+    "webpack-cli": "^3.0.1"
   }
 }

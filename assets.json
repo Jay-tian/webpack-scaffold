@@ -1,0 +1,26 @@
+{
+  "css/page/index": {
+    "css": "css/page/index.287916e0.css"
+  },
+  "css/page/app": {
+    "css": "css/page/app.72af864b.css"
+  },
+  "js/libs/common": {
+    "js": "js/libs/common.8f028fa1fee24e5409c0.js"
+  },
+  "js/index/index": {
+    "js": "js/index/index.142fefbe7318a1f8e5a8.js"
+  },
+  "js/app": {
+    "js": "js/app.4db54f7f86220e24c015.js"
+  },
+  "": {
+    "jpg": "image/c5814647cf.jpg",
+    "": [
+      "iconfont/04b9",
+      "iconfont/ebdc",
+      "iconfont/5906"
+    ],
+    "js": "js/libs/jquery/dist/jquery.min.js"
+  }
+}

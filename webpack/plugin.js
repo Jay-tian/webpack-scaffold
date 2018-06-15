@@ -1,6 +1,5 @@
 
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const config = require('./config.js');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const PurifyCSSPlugin = require('purifycss-webpack');
@@ -13,8 +12,10 @@ const path = require('path');
 const tools = require('./tools.js');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin');
-const HappyPack = require('happypack');
-const happyThreadPool = HappyPack.ThreadPool({ size: 10 });
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
+const happypack = require('./plugin/happypack.js');
+const assetsPlugin = require('./plugin/assets.js');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const getCopyPaths = function(list){
   let copyConfig = [];
@@ -30,47 +31,13 @@ const getCopyPaths = function(list){
   return copyConfig;
 };
 
+
 let plugin = [
   new webpack.BannerPlugin(config.author),
-  new HappyPack({
-    id: 'js',
-    threadPool: happyThreadPool,
-    loaders: [{
-      loader: 'babel-loader',
-      query: {
-        cacheDirectory: true,
-        presets: ['es2015'],
-        plugins: ['transform-runtime']
-      }
-    }]
-  }),
-  new HappyPack({
-    id: 'less',
-    threadPool: happyThreadPool,
-    loaders: [{
-      loader: 'less-loader',
-    }]
-  }),
-  new HappyPack({
-    id: 'css',
-    threadPool: happyThreadPool,
-    loaders: [{
-      loader: 'css-loader',
-    }]
-  }),
-  new HappyPack({
-    id: 'style',
-    threadPool: happyThreadPool,
-    loaders: [{
-      loader: 'style-loader',
-    }]
-  }),
   new webpack.optimize.ModuleConcatenationPlugin(),
-  new ExtractTextPlugin({
-    filename:  (getPath) => {
-      return getPath('[name].css').replace('js', 'css');
-    },
-    allChunks: true
+  new MiniCssExtractPlugin({
+    filename: '[name].[contenthash].css',
+    chunkFilename: '[id].css'
   }),
   new webpack.optimize.SplitChunksPlugin({
     chunks: 'async',
@@ -93,9 +60,6 @@ let plugin = [
     }
   }),
   new CopyWebpackPlugin(getCopyPaths(config.copyLibs)),
-  new PurifyCSSPlugin({
-    paths: config.purifyCssPaths,
-  }),
   new OptimizeCssAssetsPlugin({
     cssProcessor: require('cssnano'),
     cssProcessorOptions: { discardComments: { removeAll: true } },
@@ -109,7 +73,9 @@ let plugin = [
   new RemoveWebpackPlugin({
     filterPath: config.removePattern,
   }),
+  assetsPlugin,
 ];
+plugin = plugin.concat(happypack);
 
 if ('production' == config.env) {
   plugin.push(new CleanWebpackPlugin([config.output], {
@@ -128,6 +94,21 @@ if ('production' == config.env) {
       }
     }
   }));
+
+  plugin.push(new PurifyCSSPlugin({
+    paths: config.purifyCssPaths,
+  }));
+
+  plugin.push(new ImageminPlugin({
+    test: /\.(jpe?g|png|gif|svg)$/i,
+    pngquant: {
+      quality: '95-100',
+    },
+    optipng: {
+      optimizationLevel: 5
+    }
+  }));
+
   // plugin.push(new BundleAnalyzerPlugin());
 }
 

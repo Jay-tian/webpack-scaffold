@@ -12,17 +12,23 @@
         <title>
               最简单的前端方案脚手架
         </title>
-        <link href="dist/css/app.css" rel="stylesheet" />
-        <link href="dist/css/page/index.css" rel="stylesheet" />
+        <script type="text/javascript" src="dist/webpack.assets.js?v=1"></script>
+        <script>
+            document.write('<link href="' + window.staticMap['css/page/app'].css +'" rel="stylesheet" \/>');
+            document.write('<link href="' + window.staticMap['css/page/index'].css +'" rel="stylesheet" \/>');
+        </script>
     </head>
     <body class="">
-        <h1 id="title" class="text-center header-bg"  style="background-image:url('dist/image/c5814647cf.jpg')">
-          <el-row :gutter="10">
-            <el-col :xl="24">
-              {{ message }}
-            </el-col>
-          </el-row>
+        <h1 class="text-center header-bg">
+          Webpack-Scaffold
         </h1>
+        <div class="header">
+            <ul>
+                <li>首页</li>
+                <li>changelog</li>
+                <li>webpack文档说明</li>
+            </ul>
+        </div>
         <div class="container" id="main">
             <div class="row">
                 <div class="col-md-4">
@@ -35,7 +41,9 @@
            
         </div>
         <script src="dist/js/libs/jquery/dist/jquery.min.js"></script>
-        <script src="dist/js/app.js"></script>
-        <script src="dist/js/index/index.js"></script>
+        <script>
+            document.write('<script src="' + window.staticMap['js/index/index'].js +'><\/script>');
+            document.write('<script src=' + window.staticMap['js/app'].js +'><\/script>');
+        </script>
     </body>
 </html>
