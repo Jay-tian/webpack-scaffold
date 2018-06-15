@@ -7,19 +7,16 @@ let loader = [
     use: [
       MiniCssExtractPlugin.loader,
       'happypack/loader?id=style',
-      {
-        loader: 'happypack/loader?id=css'
-      },
+      'happypack/loader?id=css',
     ]
   },
   {
-    test: /\.css$/,
+    test: /\.less$/,
     use: [
+      'css-hot-loader',
       MiniCssExtractPlugin.loader,
-      'happypack/loader?id=style',
-      {
-        loader: 'happypack/loader?id=css'
-      },
+      'happypack/loader?id=css',
+      'happypack/loader?id=less',
       {
         loader: 'postcss-loader',
         options: {
@@ -29,10 +26,7 @@ let loader = [
             })
           ]
         },
-      },
-      {
-        loader: 'happypack/loader?id=less'
-      }
+      },   
     ]
   },
   {
