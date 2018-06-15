@@ -12,20 +12,23 @@
         <title>
               最简单的前端方案脚手架
         </title>
+        <script type="text/javascript" src="dist/webpack.assets.js?v=1"></script>
         <script>
-            document.write('<script type="text/javascript" src="dist/webpack.assets.js?v='+Math.random()+'"><\/script>');
-            document.write('<link href="' + window.WEBPACK_ASSETS['css/page/app'].css +' rel="stylesheet" />');
-            document.write('<link href="' + window.WEBPACK_ASSETS['css/page/index'].css +' rel="stylesheet" />');
+            document.write('<link href="' + window.staticMap['css/page/app'].css +'" rel="stylesheet" \/>');
+            document.write('<link href="' + window.staticMap['css/page/index'].css +'" rel="stylesheet" \/>');
         </script>
     </head>
     <body class="">
         <h1 class="text-center header-bg">
-          <el-row :gutter="10">
-            <el-col :xl="24">
-              {{ message }}
-            </el-col>
-          </el-row>
+          Webpack-Scaffold
         </h1>
+        <div class="header">
+            <ul>
+                <li>首页</li>
+                <li>changelog</li>
+                <li>webpack文档说明</li>
+            </ul>
+        </div>
         <div class="container" id="main">
             <div class="row">
                 <div class="col-md-4">
@@ -81,11 +84,19 @@
 
 2018-6-04
     1.1.11
-    优化：更新依赖</pre>
+    优化：更新依赖
+
+2018-6-15
+    1.1.12
+    优化： 使用hash更新资源缓存
+    新增： assets-webpack-plugin
+    优化：extract-text-webpack-plugin change to mini-css-extract-plugin</pre>
                 </div>
                 <div class="col-md-8">
                     <h1 id="-webpack4">基于webpack4</h1>
-<h2 id="-">关于前端工程化</h2>
+<h1 id="-">快速使用</h1>
+<pre><code>    yarn global add webpack-scaffold-cli;
+    jay-webpack init &lt;project-name&gt;;</code></pre><h2 id="-">关于前端工程化</h2>
 <p>前端野蛮生长的时代已经过去了。随着前端的发展，越来越复杂的业务，各种各样的插件模块依赖关系，项目复杂度的提升，开发成本越来越高。webpack就是解决了这一系列的问题。你可以利用webpack管理各种资源，也可以提前享受es6语法的便利，也可以规范成员之间的开发规范，等等。</p>
 <h2 id="-">功能列表</h2>
 <ol>
@@ -97,7 +108,9 @@
 <li>使用PurifyCSS、OptimizeCssAssets，去除多余css(未被使用)，减少css大小，优化css结构，减少50%-80%的文件大小</li>
 <li>支持iconfont字体文件</li>
 <li>自动引入html5shiv、respond，兼容h5标签以及响应式</li>
-<li>集成vue库和element组件库</li>
+<li>支持vue库和element组件库</li>
+<li>以contenthash值，生成文件名，用于更新浏览器缓存</li>
+<li>多线程打包加载资源，加快编译速度</li>
 </ol>
 <h2 id="-">下载依赖</h2>
 <pre><code>  yarn add jay-webpack-scaffold</code></pre><h2 id="-">配置文件</h2>
@@ -114,7 +127,9 @@
   copyLibs: 需要拷贝的类库，可以拷贝目录，也可以拷贝单独文件
   alias: 引用别名，加快编译速度
   libs: js类库目录，每个文件都会单独输出，可以对已有的类库模块封装输出
-  serverPort: 服务端口</code></pre><h2 id="-">代码格式化配置</h2>
+  serverPort: 服务端口,
+  assetPath: 资源路径与contenthash值对应关系（默认生成json，便于服务端渲染引用地址）
+  assetJs: 是否生成js（可以被前端使用）</code></pre><h2 id="-">代码格式化配置</h2>
 <h3 id="-js-">配置js代码风格</h3>
 <pre><code>  ./node_modules/.bin/eslint --init</code></pre><p>修复js代码格式</p>
 <pre><code>./node_modules/.bin/eslint --fix filepath</code></pre><p>规则列表：<a href="https://eslint.org/docs/rules/">https://eslint.org/docs/rules/</a></p>
@@ -180,8 +195,8 @@ kill -9 PID (pid 为进程id号)</code></pre></li>
         </div>
         <script src="dist/js/libs/jquery/dist/jquery.min.js"></script>
         <script>
-            document.write('<script src="' + window.WEBPACK_ASSETS['js/index/index'].js +'><\/script>');
-            document.write('<script src=' + window.WEBPACK_ASSETS['js/app'].js +'><\/script>');
+            document.write('<script src="' + window.staticMap['js/index/index'].js +'><\/script>');
+            document.write('<script src=' + window.staticMap['js/app'].js +'><\/script>');
         </script>
     </body>
 </html>

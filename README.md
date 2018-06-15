@@ -46,7 +46,9 @@
   copyLibs: 需要拷贝的类库，可以拷贝目录，也可以拷贝单独文件
   alias: 引用别名，加快编译速度
   libs: js类库目录，每个文件都会单独输出，可以对已有的类库模块封装输出
-  serverPort: 服务端口
+  serverPort: 服务端口,
+  assetPath: 资源路径与contenthash值对应关系（默认生成json，便于服务端渲染引用地址）
+  assetJs: 是否生成js（可以被前端使用）
 ```
 
 ## 代码格式化配置

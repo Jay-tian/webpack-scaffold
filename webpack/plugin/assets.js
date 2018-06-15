@@ -2,7 +2,8 @@ const config = require('../config.js');
 const AssetsPlugin = require('assets-webpack-plugin');
 
 const assetConfig = {
-  filename: config.assetPath
+  path: config.output,
+  filename: config.assetName,
 };
 
 if (config.assetJs) {
