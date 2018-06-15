@@ -14,7 +14,8 @@ const tools = require('./tools.js');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
-const happypack = require('./happypack.js');
+const happypack = require('./plugin/happypack.js');
+const assetsPlugin = require('./plugin/assets.js');
 
 const getCopyPaths = function(list){
   let copyConfig = [];
@@ -29,6 +30,7 @@ const getCopyPaths = function(list){
 
   return copyConfig;
 };
+
 
 let plugin = [
   new webpack.BannerPlugin(config.author),
@@ -71,6 +73,7 @@ let plugin = [
   new RemoveWebpackPlugin({
     filterPath: config.removePattern,
   }),
+  assetsPlugin,
 ];
 plugin = plugin.concat(happypack);
 

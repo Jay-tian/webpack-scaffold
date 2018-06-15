@@ -24,6 +24,8 @@ let defaultSetting = {
   removePattern: /^css\/.*\.js?$/,
   mainJs: rootPath + '/src/js/app.js',
   lessPath: rootPath + '/src/less/',
+  assetPath: '/dist/webpack.assets.js',
+  assetJs: true,
 };
 
 let settingPath = rootPath + process.env.settingPath;
