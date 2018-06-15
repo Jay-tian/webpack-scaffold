@@ -1,6 +1,5 @@
 
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const config = require('./config.js');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const PurifyCSSPlugin = require('purifycss-webpack');
@@ -16,6 +15,7 @@ const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const happypack = require('./plugin/happypack.js');
 const assetsPlugin = require('./plugin/assets.js');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const getCopyPaths = function(list){
   let copyConfig = [];
@@ -35,9 +35,9 @@ const getCopyPaths = function(list){
 let plugin = [
   new webpack.BannerPlugin(config.author),
   new webpack.optimize.ModuleConcatenationPlugin(),
-  new ExtractTextPlugin({
-    filename: '[name].[chunkhash:8].css',
-    allChunks: true
+  new MiniCssExtractPlugin({
+    filename: '[name].[contenthash].css',
+    chunkFilename: '[id].css'
   }),
   new webpack.optimize.SplitChunksPlugin({
     chunks: 'async',

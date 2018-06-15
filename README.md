@@ -18,7 +18,9 @@
 6. 使用PurifyCSS、OptimizeCssAssets，去除多余css(未被使用)，减少css大小，优化css结构，减少50%-80%的文件大小
 7. 支持iconfont字体文件
 8. 自动引入html5shiv、respond，兼容h5标签以及响应式
-9. 集成vue库和element组件库
+9. 支持vue库和element组件库
+10. 以contenthash值，生成文件名，用于更新浏览器缓存
+11. 多线程打包加载资源，加快编译速度
 
 ## 下载依赖
 ```

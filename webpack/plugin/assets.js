@@ -11,4 +11,8 @@ if (config.assetJs) {
   };
 }
 
+if ('production' != config.env) {
+  assetConfig.prettyPrint = true;
+}
+
 module.exports = new AssetsPlugin(assetConfig);
