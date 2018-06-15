@@ -16,6 +16,7 @@ const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const happypack = require('./plugin/happypack.js');
 const assetsPlugin = require('./plugin/assets.js');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const getCopyPaths = function(list){
   let copyConfig = [];
@@ -35,9 +36,11 @@ const getCopyPaths = function(list){
 let plugin = [
   new webpack.BannerPlugin(config.author),
   new webpack.optimize.ModuleConcatenationPlugin(),
-  new ExtractTextPlugin({
-    filename: '[name].[chunkhash:8].css',
-    allChunks: true
+  new MiniCssExtractPlugin({
+    // Options similar to the same options in webpackOptions.output
+    // both options are optional
+    filename: '[contenthash].css',
+    chunkFilename: '[id].css'
   }),
   new webpack.optimize.SplitChunksPlugin({
     chunks: 'async',

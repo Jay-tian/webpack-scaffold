@@ -1,18 +1,22 @@
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const config = require('./config.js');
 
 let loader = [
   {
     test: /\.css$/,
-    loader: ExtractTextPlugin.extract({fallback: 'happypack/loader?id=style', use: [
+    use: [
+      MiniCssExtractPlugin.loader,
+      'happypack/loader?id=style',
       {
         loader: 'happypack/loader?id=css'
-      },     
-    ]})
+      },
+    ]
   },
   {
-    test: /\.less$/,
-    loader: ExtractTextPlugin.extract({fallback: 'happypack/loader?id=style', use: [
+    test: /\.css$/,
+    use: [
+      MiniCssExtractPlugin.loader,
+      'happypack/loader?id=style',
       {
         loader: 'happypack/loader?id=css'
       },
@@ -29,7 +33,7 @@ let loader = [
       {
         loader: 'happypack/loader?id=less'
       }
-    ]})
+    ]
   },
   {
     test: /\.js?$/,
