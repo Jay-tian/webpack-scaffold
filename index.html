@@ -129,7 +129,15 @@
   libs: js类库目录，每个文件都会单独输出，可以对已有的类库模块封装输出
   serverPort: 服务端口,
   assetPath: 资源路径与contenthash值对应关系（默认生成json，便于服务端渲染引用地址）
-  assetJs: 是否生成js（可以被前端使用）</code></pre><h2 id="-">代码格式化配置</h2>
+  assetJs: 是否生成js（可以被前端使用）</code></pre><h2 id="-hash-">纯前端如何利用hash，生成资源路径</h2>
+<pre><code>   &lt;script type=&quot;text/javascript&quot; src=&quot;dist/webpack.assets.js?v=1&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        document.write(&#39;&lt;link href=&quot;&#39; + window.staticMap[&#39;css/page/app&#39;].css +&#39;&quot; rel=&quot;stylesheet&quot; \/&gt;&#39;);
+        document.write(&#39;&lt;script src=&quot;&#39; + window.staticMap[&#39;js/index/index&#39;].js +&#39;&gt;&lt;\/script&gt;&#39;);
+    &lt;/script&gt;</code></pre><h2 id="-hash-">服务端如何利用hash，生成资源路径</h2>
+<pre><code>    //配置文件 assetJs参数设置为 false
+    //node 
+    require(&#39;/dist/webpack.assets.json&#39;);</code></pre><h2 id="-">代码格式化配置</h2>
 <h3 id="-js-">配置js代码风格</h3>
 <pre><code>  ./node_modules/.bin/eslint --init</code></pre><p>修复js代码格式</p>
 <pre><code>./node_modules/.bin/eslint --fix filepath</code></pre><p>规则列表：<a href="https://eslint.org/docs/rules/">https://eslint.org/docs/rules/</a></p>
