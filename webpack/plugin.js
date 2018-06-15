@@ -39,7 +39,7 @@ let plugin = [
   new MiniCssExtractPlugin({
     // Options similar to the same options in webpackOptions.output
     // both options are optional
-    filename: '[contenthash].css',
+    filename: '[name].[contenthash].css',
     chunkFilename: '[id].css'
   }),
   new webpack.optimize.SplitChunksPlugin({
