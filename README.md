@@ -51,6 +51,22 @@
   assetJs: 是否生成js（可以被前端使用）
 ```
 
+## 纯前端如何利用hash，生成资源路径
+```
+   <script type="text/javascript" src="dist/webpack.assets.js?v=1"></script>
+    <script>
+        document.write('<link href="' + window.staticMap['css/page/app'].css +'" rel="stylesheet" \/>');
+        document.write('<script src="' + window.staticMap['js/index/index'].js +'><\/script>');
+    </script>
+```
+
+## 服务端如何利用hash，生成资源路径
+```
+    //配置文件 assetJs参数设置为 false
+    //node 
+    require('/dist/webpack.assets.json');
+```
+
 ## 代码格式化配置
 
 ### 配置js代码风格
