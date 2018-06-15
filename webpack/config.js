@@ -11,7 +11,7 @@ let defaultSetting = {
   alias: {
     libs: rootPath + '/src/js/libs/',
   },
-  publicPath: '/dist/webpack-scaffold/', //publicPath 本地开发，文件引用路径
+  publicPath: '/dist/', //publicPath 本地开发，文件引用路径
   author: 'jay',
   rootPath: rootPath,
   env: env,
