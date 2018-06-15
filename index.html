@@ -14,8 +14,8 @@
         </title>
         <script type="text/javascript" src="dist/webpack.assets.js?v=1"></script>
         <script>
-            document.write('<link href="/webpack-scaffold' + window.staticMap['css/page/app'].css +'" rel="stylesheet" \/>');
-            document.write('<link href="/webpack-scaffold' + window.staticMap['css/page/index'].css +'" rel="stylesheet" \/>');
+            document.write('<link href="' + window.staticMap['css/page/app'].css +'" rel="stylesheet" \/>');
+            document.write('<link href="' + window.staticMap['css/page/index'].css +'" rel="stylesheet" \/>');
         </script>
     </head>
     <body class="">
@@ -203,8 +203,8 @@ kill -9 PID (pid 为进程id号)</code></pre></li>
         </div>
         <script src="dist/js/libs/jquery/dist/jquery.min.js"></script>
         <script>
-            document.write('<script src=/webpack-scaffold"' + window.staticMap['js/index/index'].js +'"><\/script>');
-            document.write('<script src=/webpack-scaffold"' + window.staticMap['js/app'].js +'"><\/script>');
+            document.write('<script src="' + window.staticMap['js/index/index'].js +'><\/script>');
+            document.write('<script src=' + window.staticMap['js/app'].js +'><\/script>');
         </script>
     </body>
 </html>
