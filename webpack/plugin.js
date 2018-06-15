@@ -1,6 +1,5 @@
 
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const config = require('./config.js');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const PurifyCSSPlugin = require('purifycss-webpack');
@@ -37,8 +36,6 @@ let plugin = [
   new webpack.BannerPlugin(config.author),
   new webpack.optimize.ModuleConcatenationPlugin(),
   new MiniCssExtractPlugin({
-    // Options similar to the same options in webpackOptions.output
-    // both options are optional
     filename: '[name].[contenthash].css',
     chunkFilename: '[id].css'
   }),

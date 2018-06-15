@@ -12,8 +12,11 @@
         <title>
               最简单的前端方案脚手架
         </title>
-        <link href="dist/css/app.css" rel="stylesheet" />
-        <link href="dist/css/page/index.css" rel="stylesheet" />
+        <script>
+            document.write('<script type="text/javascript" src="dist/webpack.assets.js?v='+Math.random()+'"><\/script>');
+            document.write('<link href="' + window.WEBPACK_ASSETS['css/page/app'].css +' rel="stylesheet" />');
+            document.write('<link href="' + window.WEBPACK_ASSETS['css/page/index'].css +' rel="stylesheet" />');
+        </script>
     </head>
     <body class="">
         <h1 class="text-center header-bg">
@@ -24,7 +27,7 @@
           </el-row>
         </h1>
         <div class="container" id="main">
-            <div class="row teafldasfldkjsa">
+            <div class="row">
                 <div class="col-md-4">
                     <pre>2018-5-11
     1.1.0
@@ -176,7 +179,9 @@ kill -9 PID (pid 为进程id号)</code></pre></li>
            
         </div>
         <script src="dist/js/libs/jquery/dist/jquery.min.js"></script>
-        <script src="dist/js/app.js"></script>
-        <script src="dist/js/index/index.js"></script>
+        <script>
+            document.write('<script src="' + window.WEBPACK_ASSETS['js/index/index'].js +'><\/script>');
+            document.write('<script src=' + window.WEBPACK_ASSETS['js/app'].js +'><\/script>');
+        </script>
     </body>
 </html>
