@@ -52,7 +52,7 @@ let loader = [
     query: {
       name: '[hash:10].[ext]',
       outputPath:'image/',
-      publicPath: config.publicPath,
+      publicPath: config.publicPath + 'image/',
     }
   },
   {

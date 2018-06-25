@@ -76,7 +76,7 @@
   },
   "name": "jay-webpack-scaffold",
   "description": "基于webpack4的前端多入口架构方案，multi entry packaging for front end based on Webpack4",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "main": "./webpack/webpack.js",
   "directories": {
     "test": "tests"

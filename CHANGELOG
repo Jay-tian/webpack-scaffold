@@ -61,3 +61,7 @@
 2018-6-25
     1.1.13
     优化：仅生产环境使用hash输出资源
+
+2018-6-25
+    1.1.14
+    优化：升级filer_loader, 解决了outputPath和publicPath冲突
