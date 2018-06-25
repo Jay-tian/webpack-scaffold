@@ -57,3 +57,7 @@
     优化： 使用hash更新资源缓存
     新增： assets-webpack-plugin
     优化：extract-text-webpack-plugin change to mini-css-extract-plugin
+
+2018-6-25
+    1.1.13
+    优化：仅生产环境使用hash输出资源

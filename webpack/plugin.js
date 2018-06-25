@@ -36,7 +36,7 @@ let plugin = [
   new webpack.BannerPlugin(config.author),
   new webpack.optimize.ModuleConcatenationPlugin(),
   new MiniCssExtractPlugin({
-    filename: '[name].[contenthash].css',
+    filename: config.filename + '.css',
     chunkFilename: '[id].css'
   }),
   new webpack.optimize.SplitChunksPlugin({
