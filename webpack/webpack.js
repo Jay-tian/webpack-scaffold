@@ -12,7 +12,7 @@ let webpackConfig = {
   },
   output: {
     path: config.output, 
-    filename: '[name].js',
+    filename: config.filename + '.js',
     publicPath: config.publicPath,
   },
   devServer: {

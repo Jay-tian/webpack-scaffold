@@ -24,6 +24,8 @@ let setting = {
   alias: {
     libs: rootPath + '/src/js/libs/',
   },
+  assetName: 'webpack.assets.js',
+  assetJs: true,
 };
 
 module.exports = setting;

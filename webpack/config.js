@@ -11,14 +11,13 @@ let defaultSetting = {
   alias: {
     libs: rootPath + '/src/js/libs/',
   },
+  filename: 'production' == env ? '[name].[contenthash]' : '[name]',
   publicPath: '/dist/', //publicPath 本地开发，文件引用路径
   author: 'jay',
   rootPath: rootPath,
   env: env,
   purifyCssPaths: glob.sync(path.join(rootPath, '/*.html')),
   copyLibs: [
-    'validator/', 
-    'swiper/dist/',
     'jquery/dist/jquery.min.js'
   ],
   serverPort: 8082,
@@ -26,6 +25,8 @@ let defaultSetting = {
   removePattern: /^css\/.*\.js?$/,
   mainJs: rootPath + '/src/js/app.js',
   lessPath: rootPath + '/src/less/',
+  assetName: 'webpack.assets.js',
+  assetJs: true,
 };
 
 let settingPath = rootPath + process.env.settingPath;

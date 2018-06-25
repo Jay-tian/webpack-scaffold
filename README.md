@@ -1,5 +1,11 @@
 # 基于webpack4
 
+# 快速使用
+```
+    yarn global add webpack-scaffold-cli;
+    jay-webpack init <project-name>;
+```
+
 ## 关于前端工程化
 前端野蛮生长的时代已经过去了。随着前端的发展，越来越复杂的业务，各种各样的插件模块依赖关系，项目复杂度的提升，开发成本越来越高。webpack就是解决了这一系列的问题。你可以利用webpack管理各种资源，也可以提前享受es6语法的便利，也可以规范成员之间的开发规范，等等。
 
@@ -12,7 +18,9 @@
 6. 使用PurifyCSS、OptimizeCssAssets，去除多余css(未被使用)，减少css大小，优化css结构，减少50%-80%的文件大小
 7. 支持iconfont字体文件
 8. 自动引入html5shiv、respond，兼容h5标签以及响应式
-9. 集成vue库和element组件库
+9. 支持vue库和element组件库
+10. 以contenthash值，生成文件名，用于更新浏览器缓存
+11. 多线程打包加载资源，加快编译速度
 
 ## 下载依赖
 ```
@@ -38,7 +46,25 @@
   copyLibs: 需要拷贝的类库，可以拷贝目录，也可以拷贝单独文件
   alias: 引用别名，加快编译速度
   libs: js类库目录，每个文件都会单独输出，可以对已有的类库模块封装输出
-  serverPort: 服务端口
+  serverPort: 服务端口,
+  assetPath: 资源路径与contenthash值对应关系（默认生成json，便于服务端渲染引用地址）
+  assetJs: 是否生成js（可以被前端使用）
+```
+
+## 纯前端如何利用hash，生成资源路径
+```
+   <script type="text/javascript" src="dist/webpack.assets.js?v=1"></script>
+    <script>
+        document.write('<link href="' + window.staticMap['css/page/app'].css +'" rel="stylesheet" \/>');
+        document.write('<script src="' + window.staticMap['js/index/index'].js +'><\/script>');
+    </script>
+```
+
+## 服务端如何利用hash，生成资源路径
+```
+    //配置文件 assetJs参数设置为 false
+    //node 
+    require('/dist/webpack.assets.json');
 ```
 
 ## 代码格式化配置

@@ -1,21 +1,22 @@
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const config = require('./config.js');
 
 let loader = [
   {
     test: /\.css$/,
-    loader: ExtractTextPlugin.extract({fallback: 'happypack/loader?id=style', use: [
-      {
-        loader: 'happypack/loader?id=css'
-      },     
-    ]})
+    use: [
+      MiniCssExtractPlugin.loader,
+      'happypack/loader?id=style',
+      'happypack/loader?id=css',
+    ]
   },
   {
     test: /\.less$/,
-    loader: ExtractTextPlugin.extract({fallback: 'happypack/loader?id=style', use: [
-      {
-        loader: 'happypack/loader?id=css'
-      },
+    use: [
+      'css-hot-loader',
+      MiniCssExtractPlugin.loader,
+      'happypack/loader?id=css',
+      'happypack/loader?id=less',
       {
         loader: 'postcss-loader',
         options: {
@@ -25,11 +26,8 @@ let loader = [
             })
           ]
         },
-      },
-      {
-        loader: 'happypack/loader?id=less'
-      }
-    ]})
+      },   
+    ]
   },
   {
     test: /\.js?$/,
@@ -43,7 +41,7 @@ let loader = [
         loader: 'file-loader',
         options: {  
           name:'[hash:4]',  
-          outputPath:'iconfont/'  
+          outputPath:'iconfont/'
         }  
       }  
     ]  
@@ -52,7 +50,9 @@ let loader = [
     test:/\.(png)|(jpg)|(gif)$/i,  
     loader: 'file-loader',
     query: {
-      name: 'image/[hash:10].[ext]',
+      name: '[hash:10].[ext]',
+      outputPath:'image/',
+      publicPath: config.publicPath,
     }
   },
   {
