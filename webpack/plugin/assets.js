@@ -1,5 +1,5 @@
 const config = require('../config.js');
-const AssetsPlugin = require('assets-webpack-plugin');
+const AssetsPlugin = require('jay-assets-webpack-plugin');
 
 const assetConfig = {
   path: config.output,
