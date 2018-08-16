@@ -1,56 +1,15 @@
-2018-5-11
-    1.1.0
-    升级：到webpack4
+2018-8-16
+    1.1.15
+    优化：设置webpack-serve disableHostCheck为true
+    优化：webpack.assets.js， chunkname为空时，不产生记录
 
-2018-5-11
-    1.1.1
-    修复：lib copy 路径问题
+2018-6-25
+    1.1.14
+    优化：升级filer_loader, 解决了outputPath和publicPath冲突
 
-2018-5-13
-    1.1.2
-    修复：解决入口文件是less文件时，额外产生js文件的问题
-
-2018-5-13
-    1.1.3
-    新增：开发环境，webpack-dev-server
-
-2018-5-17
-    1.1.4
-    新增：lean插件，build前删除原有静态文件
-
-2018-5-17 
-    1.1.5
-    修复：了开发环境下，某些资源丢失的情况
-
-2018-5-21
-    1.1.6
-    新增：全局的js文件，自动引入 html5shiv，respond
-
-2018-5-24
-    1.1.7
-    新增：resolve.alias 配置, 加快路径解析
-    新增：libs参数，自由编写类库文件，可以对一些模块进行封装输出
-    新增：CopyWebpackPlugin支持单个文件拷贝或目录拷贝
-
-2018-5-25
-    1.1.8
-    新增：stylelint，规范less，css书写规范
-
-2018-5-30
-    1.1.9
-    新增：打包进度，ProgressBarPlugin
-    修复：style格式校验路径问题
-    新增：自定义端口
-
-2018-5-30
-    1.1.10
-    新增：HappyPack,webpack-parallel-uglify-plugin,多进程任务，加快打包进度
-    新增：ModuleConcatenationPlugin, 优化打包速度
-    新增：vue组件，Element组件
-
-2018-6-04
-    1.1.11
-    优化：更新依赖
+2018-6-25
+    1.1.13
+    优化：仅生产环境使用hash输出资源
 
 2018-6-15
     1.1.12
@@ -58,10 +17,72 @@
     新增： assets-webpack-plugin
     优化：extract-text-webpack-plugin change to mini-css-extract-plugin
 
-2018-6-25
-    1.1.13
-    优化：仅生产环境使用hash输出资源
+2018-6-04
+    1.1.11
+    优化：更新依赖
 
-2018-6-25
-    1.1.14
-    优化：升级filer_loader, 解决了outputPath和publicPath冲突
+2018-5-30
+    1.1.10
+    新增：HappyPack,webpack-parallel-uglify-plugin,多进程任务，加快打包进度
+    新增：ModuleConcatenationPlugin, 优化打包速度
+    新增：vue组件，Element组件
+
+2018-5-30
+    1.1.9
+    新增：打包进度，ProgressBarPlugin
+    修复：style格式校验路径问题
+    新增：自定义端口
+
+2018-5-25
+    1.1.8
+    新增：stylelint，规范less，css书写规范
+
+2018-5-24
+    1.1.7
+    新增：resolve.alias 配置, 加快路径解析
+    新增：libs参数，自由编写类库文件，可以对一些模块进行封装输出
+    新增：CopyWebpackPlugin支持单个文件拷贝或目录拷贝
+
+2018-5-21
+    1.1.6
+    新增：全局的js文件，自动引入 html5shiv，respond
+
+2018-5-17 
+    1.1.5
+    修复：了开发环境下，某些资源丢失的情况
+
+2018-5-17
+    1.1.4
+    新增：lean插件，build前删除原有静态文件
+
+
+2018-5-13
+    1.1.3
+    新增：开发环境，webpack-dev-server
+
+2018-5-13
+    1.1.2
+    修复：解决入口文件是less文件时，额外产生js文件的问题
+
+2018-5-11
+    1.1.1
+    修复：lib copy 路径问题
+
+2018-5-11
+    1.1.0
+    升级：到webpack4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

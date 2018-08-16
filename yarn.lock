@@ -488,16 +488,6 @@ assertion-error@^1.0.1:
   version "1.1.0"
   resolved "http://registry.npm.taobao.org/assertion-error/download/assertion-error-1.1.0.tgz#e60b6b0e8f301bd97e5375215bda406c85118c0b"
 
-assets-webpack-plugin@^3.7.1:
-  version "3.7.1"
-  resolved "https://registry.npmjs.org/assets-webpack-plugin/-/assets-webpack-plugin-3.7.1.tgz#a67bf48c3ac0cacee04b324938f4b2a625ad60b5"
-  dependencies:
-    camelcase "^5.0.0"
-    escape-string-regexp "^1.0.3"
-    lodash.assign "^4.2.0"
-    lodash.merge "^4.6.1"
-    mkdirp "^0.5.1"
-
 assign-symbols@^1.0.0:
   version "1.0.0"
   resolved "http://registry.npm.taobao.org/assign-symbols/download/assign-symbols-1.0.0.tgz#59667f41fadd4f20ccbc2bb96b8d4f7f78ec0367"
@@ -5672,6 +5662,16 @@ isurl@^1.0.0-alpha5:
   dependencies:
     has-to-string-tag-x "^1.2.0"
     is-object "^1.0.1"
+
+jay-assets-webpack-plugin@^3.7.1:
+  version "3.9.5"
+  resolved "https://registry.npmjs.org/jay-assets-webpack-plugin/-/jay-assets-webpack-plugin-3.9.5.tgz#9444100c24f793b60c5c29c1140d3dd4aa87299e"
+  dependencies:
+    camelcase "^5.0.0"
+    escape-string-regexp "^1.0.3"
+    lodash.assign "^4.2.0"
+    lodash.merge "^4.6.1"
+    mkdirp "^0.5.1"
 
 jay-remove-webpack-plugin@^1.0.0:
   version "1.0.0"

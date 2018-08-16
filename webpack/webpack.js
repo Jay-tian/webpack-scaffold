@@ -20,6 +20,7 @@ let webpackConfig = {
     contentBase: config.rootPath, //最好设置成绝对路径
     host:'127.0.0.1',
     port: config.serverPort,
+    disableHostCheck: true,
   },
   externals: {
     jquery: 'jQuery',
