@@ -24,7 +24,7 @@ const getCopyPaths = function(list){
       from: path.join(config.rootPath + '/node_modules/', name),
       to: path.join(config.output, '/js/libs/' + tools.dirname(name)),
       toType: 'dir',
-      ignore: ['*.md', 'LICENSE', 'package.json', 'package-lock.json', 'gulpfile.js', 'composer.json', 'bower.json']
+      ignore: ['test/*','tests/*','*.md', 'LICENSE', 'package.json', 'package-lock.json', 'gulpfile.js', 'composer.json', 'bower.json']
     });
   });
 
