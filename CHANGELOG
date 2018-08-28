@@ -1,3 +1,7 @@
+2018-8-28
+    1.1.15
+    优化：将webpack相关依赖放入devDependencies中
+
 2018-8-16
     1.1.15
     优化：设置webpack-serve disableHostCheck为true
