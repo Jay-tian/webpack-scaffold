@@ -1,4 +1,7 @@
 2018-8-28
+    1.1.18
+    修复：css中z-index计算不准确的问题
+
     1.1.17
     优化：将webpack相关依赖放入devDependencies中
 
