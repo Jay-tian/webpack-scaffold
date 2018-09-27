@@ -7,9 +7,7 @@
     "jquery": "^3.3.1",
     "koa": "^2.5.1",
     "marked": "^0.4.0",
-    "popper.js": "^1.14.4"
-  },
-  "devDependencies": {
+    "popper.js": "^1.14.4",
     "autoprefixer": "^7.2.5",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
@@ -56,6 +54,8 @@
     "webpack-dev-server": "^3.1.4",
     "webpack-parallel-uglify-plugin": "^1.1.0"
   },
+  "devDependencies": {
+  },
   "scripts": {
     "build": "NODE_ENV=production webpack --open --config './webpack/webpack.js'",
     "dev": "NODE_ENV=development webpack-dev-server --open --config './webpack/webpack.js'",
@@ -66,7 +66,7 @@
   },
   "name": "jay-webpack-scaffold",
   "description": "基于webpack4的前端多入口架构方案，multi entry packaging for front end based on Webpack4",
-  "version": "1.1.18",
+  "version": "1.1.19",
   "main": "./webpack/webpack.js",
   "directories": {
     "test": "tests"
