@@ -16,6 +16,7 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const happypack = require('./plugin/happypack.js');
 const assetsPlugin = require('./plugin/assets.js');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 const getCopyPaths = function(list){
   let copyConfig = [];
@@ -33,6 +34,7 @@ const getCopyPaths = function(list){
 
 
 let plugin = [
+  new VueLoaderPlugin(),
   new webpack.BannerPlugin(config.author),
   new webpack.optimize.ModuleConcatenationPlugin(),
   new MiniCssExtractPlugin({
