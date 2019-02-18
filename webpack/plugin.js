@@ -75,11 +75,11 @@ let plugin = [
   new RemoveWebpackPlugin({
     filterPath: config.removePattern,
   }),
-  assetsPlugin,
 ];
 plugin = plugin.concat(happypack);
 
 if ('production' == config.env) {
+  plugin.push(assetsPlugin);
   plugin.push(new CleanWebpackPlugin([config.output], {
     root: config.rootPath
   }));
