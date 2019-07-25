@@ -84,18 +84,15 @@ if ('production' == config.env) {
     root: config.rootPath
   }));
 
-  plugin.push(new ParallelUglifyPlugin({
-    cacheDir: path.join(config.rootPath,'webpack-cache'),
-    workerCount: 5,
-    uglifyJS:{
-      output: {
-        comments: false
-      },
-      compress: {
-        warnings: false
-      }
-    }
-  }));
+  // plugin.push(new ParallelUglifyPlugin({
+  //   cacheDir: path.join(config.rootPath,'webpack-cache'),
+  //   workerCount: 5,
+  //   uglifyJS:{
+  //     output: {
+  //       comments: false
+  //     }
+  //   }
+  // }));
 
   plugin.push(new PurifyCSSPlugin({
     paths: config.purifyCssPaths,
